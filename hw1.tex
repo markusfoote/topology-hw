@@ -1,18 +1,101 @@
-\documentclass[11pt]{jhwhw}
+\documentclass{jhwhw}
 \usepackage{amsmath}
-%\usepackage[margin=1in]{geometry}
-
+\usepackage{amssymb}
 \title{MATH 5510: Topology: HW 1}
 \author{Markus Foote}
 
 \begin{document}
 \problem{}
-    Let $$d_{(2)}(x,y)=\sqrt{(x_1-y_1)^@+\cdots+(x_n-y_n)^2}$$ be the Euclidian distance funciton in $\mathbb{R}^n$ and let $$d_{(1)}(x,y)=|x_1-y_1|+\cdots+|x_n-y_n|$$ be the ''taxicab'' distance, where, as usual, $x=(x_1,\dots,x_n)$ and$y=(y_1,\dots,y_n)$. Prove the following two inequalities that compart eht two distancees and discuss the case of eqality in each inequality. $$d_{(2)}(x,y)\leq d_{(1)}(x,y)\leq \sqrt{n}d_{(2)}(x,y).$$
+    Let $$d_{(2)}(x,y)=\sqrt{(x_1-y_1)^2+\cdots+(x_n-y_n)^2}$$ be the Euclidean distance function in $\mathbb{R}^n$ and let $$d_{(1)}(x,y)=|x_1-y_1|+\cdots+|x_n-y_n|$$ be the ''taxicab'' distance, where, as usual, $x=(x_1,\dots,x_n)$ and$y=(y_1,\dots,y_n)$. Prove the following two inequalities that compare the two distances and discuss the case of equality in each inequality. $$d_{(2)}(x,y)\leq d_{(1)}(x,y)\leq \sqrt{n}d_{(2)}(x,y).$$
 \solution
 \part
-$$y=mx+b$$
+Prove $d_{(2)}(x,y)\leq d_{(1)}(x,y)$.
+\begin{align}
+d_{(2)}(x,y)&\leq d_{(1)}(x,y)\\
+(d_{(2)}(x,y))^2&\leq (d_{(1)}(x,y))^2\\
+\big(\sqrt{(x_1-y_1)^2+\cdots+(x_n-y_n)^2}\big)^2&\leq \big(|x_1-y_1|+\cdots+|x_n-y_n|\big)^2\\
+(x_1-y_1)^2+\cdots+(x_n-y_n)^2 &\leq \big(|x_1-y_1|+\cdots+|x_n-y_n|\big)^2\\
+\sum_{i=1}^{n}\left[(x_i-y_i)^2\right] &\leq \left(\sum_{i=1}^{n}|x_i-y_i|\right)^2\\
+\sum_{i=1}^{n}\left[(x_i-y_i)^2\right] &\leq \left(\sum_{i=1}^{n}|x_i-y_i|\right)\left(\sum_{j=1}^{n}|x_j-y_j|\right)\\
+\sum_{i=1}^{n}\left[(x_i-y_i)^2\right] &\leq \sum_{i=1}^{n}\left[|x_i-y_i|\left(|x_i-y_i|+\sum_{j=1,\,j\neq i}^{n}|x_j-y_j|\right)\right]\\
+\sum_{i=1}^{n}\left[(x_i-y_i)^2\right] &\leq \sum_{i=1}^{n}|x_i-y_i|^2+\sum_{j=1,\,j\neq i}^{n}|x_i-y_i||x_j-y_j|\\
+\sum_{i=1}^{n}\left[(x_i-y_i)^2\right] &\leq \sum_{i=1}^{n}\left(x_i-y_i\right)^2+\sum_{i=1}^{n}\sum_{j=1,\,j\neq i}^{n}|x_i-y_i||x_j-y_j|\\
+0 &\leq \sum_{i=1}^{n}\sum_{j=1,\,j\neq i}^{n}|x_i-y_i||x_j-y_j|
+\end{align}
+Points along the same 'axis' in any dimension have the same distance in both metrics.
 \part
 explanation here
 
+\problem{}
+Let $f:[0,\infty)\to [0,\infty)$ be a function that satisfies: 
+\begin{enumerate}
+	\item $f(0) = 0$.
+	\item $f$ is strictly increasing: $f(s) < f(t) $ whenever $0\le s < t $.
+	\item $f(s+t)\le f(s) + f(t)$ for all $s,t\ge 0$.
+\end{enumerate}
+Prove that If $(X,d)$ is a metric space, $(X,f\circ d)$ is also a metric space.
+\solution
+We must prove the axioms of a metric space with the new metric $f\circ d$:
+\begin{enumerate}
+	\item $f\circ d(x,y) \geq 0$, $f\circ d(x,y) =0$ if and only if $x=y$. 
+	
+	$d$ is a metric, thus $d=0$ if and only if $x=y$. Given that $f(0)=0$ we know that $f\circ d=0$ when $d=0$. Furthermore, because $f$ is strictly increasing, we know that this is the only value that will produce zero. Also, $f\circ d$ is strictly increasing from zero, thus $f\circ d(x,y) \ge 0$, thus the axiom holds.
+	\item $f\circ d(x,y)=f\circ d(y,x)$
+	
+	$d$ is a metric, thus $d(x,y)=d(y,x)$. As $f$ is a function, the same input value will produce the same output value, thus the axiom holds.
+	\item $f\circ d(x,z) \leq f\circ d(x,y) + f\circ d(y,z)$
+	
+	Let $d(x,y)=s$ and $d(y,z)=t$, thus $d(x,z) \le s+t$ as $d$ is a metric. As $f$ is strictly increasing, $f\circ d(x,z) \le f(s+t)$. Furthermore, it is given that $f(s+t)\le f(s) + f(t)$, thus $f\circ d(x,z) \le f(s) + f(t)$, which is $f\circ d(x,z) \le f\circ d(x,y) + f\circ d(y,z)$ which is the triangle inequality.
+\end{enumerate}
+\problem{}
+Which of the following functions $d:\mathbb{R}\times \mathbb{R} \to \mathbb{R}$ are metrics on $\mathbb{R}$?
+\begin{enumerate}
+	\item $d(x,y) = |x-y|^2$
+	\item $d(x,y) = \sqrt{|x-y|}$
+\end{enumerate}
+\solution
+\part
+Let us take three points as a counterexample:
+\begin{align}
+x&=0 & y&=1 & z&=2\\
+&&d(x,z) &\leq d(x,y)+d(y,z)\\
+&&|x-z|^2 &\leq |x-y|^2 + |y-z|^2\\
+&&|0-2|^2 &\leq |0-1|^2 + |1-2|^2\\
+&&2^2 &\leq 1^2 + 1^2\\
+&&4 &\nleq 2
+\end{align}
+Thus $d(x,y) = |x-y|^2$ is not a metric on $\mathbb{R}$ because the triangle inequality is not satisfied.
+\part
+$d(x,y) = \sqrt{|x-y|}$ is a metric on $\mathbb{R}$ because $\sqrt{|x-y|} = f\circ d(x,y)$ where $f(x)=\sqrt{x}$ and $d(x,y)=|x-y|$, the latter being a known metric on $\mathbb{R}$ and we show $f$ satisfies the conditions set in Problem 2:
+\begin{enumerate}
+	\item $f(0) = 0$.
+	
+	
+	\item $f$ is strictly increasing: $f(s) < f(t) $ whenever $0\le s < t $.
+	
+	
+	\item $f(s+t)\le f(s) + f(t)$ for all $s,t\ge 0$.
+	
+	
+\end{enumerate}
 
+\problem{}
+Let $S^2 = \{x = (x_1,x_2,x_3)\in\mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2  = 1\}$ be the unit sphere  in $\mathbb{R}^3$.  Let $d_i(x,y) = \cos^{-1}(x\cdot y)$, where $x\cdot y$ is the usual dot product of vectors in $\mathbb{R}^3$, be the intrinsic metric on $S^2$ (length of the great circle arc joining $x$ and $y$).    Prove that $(S^2,d_i)$ is a metric space.
+\solution
+
+
+\problem{}
+ \emph{Triangle inequality and convexity}: Let $u\to |u|$ be a function $\mathbb{R}^n \to \mathbb{R}$ satisfying
+ \begin{enumerate}
+ 	\item $|u|\ge 0$ and $=0$ if and only if $u=0$.
+ 	\item $|\lambda u| =| \lambda||u|$ for all $\lambda\in \mathbb{R}$ and $u\in \mathbb{R}^n$.
+ \end{enumerate}
+ 
+ Prove that the following two statements are equivalent:
+ \begin{enumerate}
+ 	\item $|u|$ is a norm (that is, it satisfies the triangle inequality $|u+v|\le |u| + |v|$).
+ 	\item For all $r>0$ the balls $B(0,r) = \{u: |u|\le r\}$ are \emph{convex} ($u,v\in B(0,r)$ and $0\le t \le 1 \Longrightarrow (1-t)u + tv \in B(0,r)$).
+\end{enumerate}
+
+\solution
 \end{document}
