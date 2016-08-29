@@ -39,10 +39,10 @@ We must prove the axioms of a metric space with the new metric $f\circ d$:
 \begin{enumerate}
 	\item $f\circ d(x,y) \geq 0$, $f\circ d(x,y) =0$ if and only if $x=y$. 
 	
-	$d$ is a metric, thus $d=0$ if and only if $x=y$. Given that $f(0)=0$ we know that $f\circ d=0$ when $d=0$. Furthermore, because $f$ is strictly increasing, we know that this is the only value that will produce zero. Also, $f\circ d$ is strictly increasing from zero, thus $f\circ d(x,y) \ge 0$, thus the axiom holds.
+	$d$ is a metric, thus $d=0$ if and only if $x=y$. Given that $f(0)=0$ we know that $f\circ d=0$ when $d=0$. Furthermore, because $f$ is strictly increasing, we know that this is the only argument that will produce zero. Also, $f\circ d$ is strictly increasing from zero, thus $f\circ d(x,y) \ge 0$, thus the axiom holds.
 	\item $f\circ d(x,y)=f\circ d(y,x)$
 	
-	$d$ is a metric, thus $d(x,y)=d(y,x)$. As $f$ is a function, the same input value will produce the same output value, thus the axiom holds.
+	$d$ is a metric, thus $d(x,y)=d(y,x)$. As $f$ is a function, the same input argument will always produce the same output value, thus the axiom holds.
 	\item $f\circ d(x,z) \leq f\circ d(x,y) + f\circ d(y,z)$
 	
 	Let $d(x,y)=s$ and $d(y,z)=t$, thus $d(x,z) \le s+t$ as $d$ is a metric. As $f$ is strictly increasing, $f\circ d(x,z) \le f(s+t)$. Furthermore, it is given that $f(s+t)\le f(s) + f(t)$, thus $f\circ d(x,z) \le f(s) + f(t)$, which is $f\circ d(x,z) \le f\circ d(x,y) + f\circ d(y,z)$ which is the triangle inequality.
@@ -70,13 +70,13 @@ $d(x,y) = \sqrt{|x-y|}$ is a metric on $\mathbb{R}$ because $\sqrt{|x-y|} = f\ci
 \begin{enumerate}
 	\item $f(0) = 0$.
 	
+	$$\sqrt{0}=0$$
+	\item $f$ is strictly increasing: $f(s) < f(t) $ whenever $0\le s < t $ for the domain $[0,\infty)$].
 	
-	\item $f$ is strictly increasing: $f(s) < f(t) $ whenever $0\le s < t $.
-	
-	
+	$$\frac{d}{dx}\left(\sqrt{x}\right)= \frac{1}{2\sqrt{x}}$$ which is positive and non-zero for all $x\in [0,\infty)$.
 	\item $f(s+t)\le f(s) + f(t)$ for all $s,t\ge 0$.
 	
-	
+	$$\frac{d^2}{dx^2}\left(\sqrt{x}\right)= -\frac{1}{4x^{3/2}}$$ which is negative and non-zero for all $x\in [0,\infty) \Rightarrow \sqrt{s+t}\le \sqrt{s} + \sqrt{t}$ for all $s,t\ge 0$
 \end{enumerate}
 
 \problem{}
