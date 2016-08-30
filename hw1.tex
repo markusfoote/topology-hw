@@ -5,7 +5,7 @@
 \author{Markus Foote}
 
 \begin{document}
-\problem{}
+\problem{}%1
     Let $$d_{(2)}(x,y)=\sqrt{(x_1-y_1)^2+\cdots+(x_n-y_n)^2}$$ be the Euclidean distance function in $\mathbb{R}^n$ and let $$d_{(1)}(x,y)=|x_1-y_1|+\cdots+|x_n-y_n|$$ be the ''taxicab'' distance, where, as usual, $x=(x_1,\dots,x_n)$ and$y=(y_1,\dots,y_n)$. Prove the following two inequalities that compare the two distances and discuss the case of equality in each inequality. $$d_{(2)}(x,y)\leq d_{(1)}(x,y)\leq \sqrt{n}d_{(2)}(x,y).$$
 \solution
 \part
@@ -22,11 +22,11 @@ d_{(2)}(x,y)&\leq d_{(1)}(x,y)\\
 \sum_{i=1}^{n}\left[(x_i-y_i)^2\right] &\leq \sum_{i=1}^{n}\left(x_i-y_i\right)^2+\sum_{i=1}^{n}\sum_{j=1,\,j\neq i}^{n}|x_i-y_i||x_j-y_j|\\
 0 &\leq \sum_{i=1}^{n}\sum_{j=1,\,j\neq i}^{n}|x_i-y_i||x_j-y_j|
 \end{align}
-Points along the same 'axis' in any dimension have the same distance in both metrics.
+The trivial case of equality is both points being zero. More interestingly, points that differ in only one dimension and are equal in all other dimensions have the same distance in both metrics.
 \part
 explanation here
 
-\problem{}
+\problem{}%2
 Let $f:[0,\infty)\to [0,\infty)$ be a function that satisfies: 
 \begin{enumerate}
 	\item $f(0) = 0$.
@@ -47,7 +47,7 @@ We must prove the axioms of a metric space with the new metric $f\circ d$:
 	
 	Let $d(x,y)=s$ and $d(y,z)=t$, thus $d(x,z) \le s+t$ as $d$ is a metric. As $f$ is strictly increasing, $f\circ d(x,z) \le f(s+t)$. Furthermore, it is given that $f(s+t)\le f(s) + f(t)$, thus $f\circ d(x,z) \le f(s) + f(t)$, which is $f\circ d(x,z) \le f\circ d(x,y) + f\circ d(y,z)$ which is the triangle inequality.
 \end{enumerate}
-\problem{}
+\problem{}%3
 Which of the following functions $d:\mathbb{R}\times \mathbb{R} \to \mathbb{R}$ are metrics on $\mathbb{R}$?
 \begin{enumerate}
 	\item $d(x,y) = |x-y|^2$
@@ -70,21 +70,28 @@ $d(x,y) = \sqrt{|x-y|}$ is a metric on $\mathbb{R}$ because $\sqrt{|x-y|} = f\ci
 \begin{enumerate}
 	\item $f(0) = 0$.
 	
-	$$\sqrt{0}=0$$
+	$$f(0)=\sqrt{0}=0$$
 	\item $f$ is strictly increasing: $f(s) < f(t) $ whenever $0\le s < t $ for the domain $[0,\infty)$].
 	
-	$$\frac{d}{dx}\left(\sqrt{x}\right)= \frac{1}{2\sqrt{x}}$$ which is positive and non-zero for all $x\in [0,\infty)$.
+	$\sqrt{x}$ is known to be strictly increasing on the domain $[0,\infty)$.  %$$\frac{d}{dx}\left(\sqrt{x}\right)= \frac{1}{2\sqrt{x}}$$ which is positive and non-zero for all $x\in [0,\infty)$.
 	\item $f(s+t)\le f(s) + f(t)$ for all $s,t\ge 0$.
 	
-	$$\frac{d^2}{dx^2}\left(\sqrt{x}\right)= -\frac{1}{4x^{3/2}}$$ which is negative and non-zero for all $x\in [0,\infty) \Rightarrow \sqrt{s+t}\le \sqrt{s} + \sqrt{t}$ for all $s,t\ge 0$
+	$d(x,y)=|x-y|$ satisfies the triangle inequality:
+        \begin{align}
+          |x-z| &\le |x-y|+|y-z|\\
+          |x-z| &\le |x-y|+|y-z|-something\\
+          something & else\\
+          \sqrt{|x-z|} &\le \sqrt{x-y} + \sqrt{|y-z|}
+        \end{align}
+        %$$\frac{d^2}{dx^2}\left(\sqrt{x}\right)= -\frac{1}{4x^{3/2}}$$ which is negative and non-zero for all $x\in [0,\infty) \Rightarrow \sqrt{s+t}\le \sqrt{s} + \sqrt{t}$ for all $s,t\ge 0$
 \end{enumerate}
 
-\problem{}
+\problem{}%4
 Let $S^2 = \{x = (x_1,x_2,x_3)\in\mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2  = 1\}$ be the unit sphere  in $\mathbb{R}^3$.  Let $d_i(x,y) = \cos^{-1}(x\cdot y)$, where $x\cdot y$ is the usual dot product of vectors in $\mathbb{R}^3$, be the intrinsic metric on $S^2$ (length of the great circle arc joining $x$ and $y$).    Prove that $(S^2,d_i)$ is a metric space.
 \solution
 
 
-\problem{}
+\problem{}%5
  \emph{Triangle inequality and convexity}: Let $u\to |u|$ be a function $\mathbb{R}^n \to \mathbb{R}$ satisfying
  \begin{enumerate}
  	\item $|u|\ge 0$ and $=0$ if and only if $u=0$.
