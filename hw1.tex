@@ -6,7 +6,7 @@
 
 \begin{document}
 \problem{}%1
-    Let $$d_{(2)}(x,y)=\sqrt{(x_1-y_1)^2+\cdots+(x_n-y_n)^2}$$ be the Euclidean distance function in $\mathbb{R}^n$ and let $$d_{(1)}(x,y)=|x_1-y_1|+\cdots+|x_n-y_n|$$ be the ''taxicab'' distance, where, as usual, $x=(x_1,\dots,x_n)$ and$y=(y_1,\dots,y_n)$. Prove the following two inequalities that compare the two distances and discuss the case of equality in each inequality. $$d_{(2)}(x,y)\leq d_{(1)}(x,y)\leq \sqrt{n}d_{(2)}(x,y).$$
+    Let $$d_{(2)}(x,y)=\sqrt{(x_1-y_1)^2+\cdots+(x_n-y_n)^2}$$ be the Euclidean distance function in $\mathbb{R}^n$ and let $$d_{(1)}(x,y)=|x_1-y_1|+\cdots+|x_n-y_n|$$ be the ''taxicab'' distance, where, as usual, $x=(x_1,\dots,x_n)$ and$y=(y_1,\dots,y_n)$. Prove the following two inequalities that compare the two distances and discuss the case of equality in each inequality. $$d_{(2)}(x,y)\leq d_{(1)}(x,y)\leq \sqrt{n}\,d_{(2)}(x,y).$$
 \solution
 \part
 Prove $d_{(2)}(x,y)\leq d_{(1)}(x,y)$.
@@ -24,7 +24,14 @@ d_{(2)}(x,y)&\leq d_{(1)}(x,y)\\
 \end{align}
 The trivial case of equality is both points being zero. More interestingly, points that differ in only one dimension and are equal in all other dimensions have the same distance in both metrics.
 \part
-explanation here
+$d_{(1)(x,y)} \le \sqrt{n}\,d_{(2)}(x,y)$
+\begin{align}
+d_{(1)}(x,y)&=\sum_{i=1}^{n}|x_i-y_i|\\
+             &=\sum_{i=1}^{n}\Big(|x_i-y_i| \cdot 1\Big)                 \\
+             & \left(\sum_{i=1}^{n}\Big(|x_i-y_i| \cdot 1\Big)\right)^2 &\le& \left(\sum_{i=1}^{n}|x_i-y_i|^2\right)\left(\sum_{i=1}^{n} 1^2 \right)\\
+             &= \sum_{i=1}^{n}\Big(|x_i-y_i| \cdot 1\Big)                  &\le& \left(\sum_{i=1}^{n}|x_i-y_i|^2\right)^{\frac{1}{2}}\left(\sum_{i=1}^{n} 1^2 \right)^{\frac{1}{2}}\\
+             &                                                                               &\le& \sqrt{n}\left(\sum_{i=1}^{n}|x_i-y_i|^2\right)^{\frac{1}{2}} &= \sqrt{n}\,d_{(2)}(x,y)
+\end{align}
 
 \problem{}%2
 Let $f:[0,\infty)\to [0,\infty)$ be a function that satisfies: 
