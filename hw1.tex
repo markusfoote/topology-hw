@@ -1,6 +1,7 @@
 \documentclass{jhwhw}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{tikz}
 \title{MATH 5510: Topology: HW 1}
 \author{Markus Foote}
 
@@ -32,6 +33,7 @@ d_{(1)}(x,y)&=\sum_{i=1}^{n}|x_i-y_i|\\
              &= \sum_{i=1}^{n}\Big(|x_i-y_i| \cdot 1\Big)                  &\le& \left(\sum_{i=1}^{n}|x_i-y_i|^2\right)^{\frac{1}{2}}\left(\sum_{i=1}^{n} 1^2 \right)^{\frac{1}{2}}\\
              &                                                                               &\le& \sqrt{n}\left(\sum_{i=1}^{n}|x_i-y_i|^2\right)^{\frac{1}{2}} &= \sqrt{n}\,d_{(2)}(x,y)
 \end{align}
+Equality occurs trivially when both points are zero. More interestingly, equality occurs when the points are equally distant on the real line for each dimension, which might be visualized as the two points being the opposite corners of a square, cube, hypercube, etc. The metrics are also always equal for $\mathbb{R}^1$.
 
 \problem{}%2
 Let $f:[0,\infty)\to [0,\infty)$ be a function that satisfies: 
@@ -86,8 +88,8 @@ $d(x,y) = \sqrt{|x-y|}$ is a metric on $\mathbb{R}$ because $\sqrt{|x-y|} = f\ci
 	$d(x,y)=|x-y|$ satisfies the triangle inequality:
         \begin{align}
           |x-z| &\le |x-y|+|y-z|\\
-          |x-z| &\le |x-y|+|y-z|-something\\
-          something & else\\
+          |x-z| &\le |x-y|+|y-z|+2\sqrt{|x-y||y-z|}\\
+          |x-z| &\le \left(\sqrt{|x-y|}\sqrt{|y-z|}\right)^2\\
           \sqrt{|x-z|} &\le \sqrt{x-y} + \sqrt{|y-z|}
         \end{align}
         %$$\frac{d^2}{dx^2}\left(\sqrt{x}\right)= -\frac{1}{4x^{3/2}}$$ which is negative and non-zero for all $x\in [0,\infty) \Rightarrow \sqrt{s+t}\le \sqrt{s} + \sqrt{t}$ for all $s,t\ge 0$
@@ -96,7 +98,37 @@ $d(x,y) = \sqrt{|x-y|}$ is a metric on $\mathbb{R}$ because $\sqrt{|x-y|} = f\ci
 \problem{}%4
 Let $S^2 = \{x = (x_1,x_2,x_3)\in\mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2  = 1\}$ be the unit sphere  in $\mathbb{R}^3$.  Let $d_i(x,y) = \cos^{-1}(x\cdot y)$, where $x\cdot y$ is the usual dot product of vectors in $\mathbb{R}^3$, be the intrinsic metric on $S^2$ (length of the great circle arc joining $x$ and $y$).    Prove that $(S^2,d_i)$ is a metric space.
 \solution
+$(\mathbb{R}^3,d_e)$ is a known metric space where $d_e$ is the Euclidean distance, of which $(S^2,d_e)$ is a subspace. We relate $d_i$ and $d_e$ as $d_i (x,y)= f\circ d_e(x,y)$ , although $f$ does not satisfy the condition set in problem 2(c).
+\begin{center}
+	\begin{tikzpicture}
+	    \draw (0,0) circle (3cm);
+	    \fill (0,0) circle[radius=2pt];
+	    
+	    \path (0,0) ++(10:3cm) coordinate (B) node [right]{$x$};
+	    \fill (B) circle[radius=2pt];
+	    
+	    \path (0,0) ++(80:3cm) coordinate (C) node [above left]{$y$};
+	    \fill (C) circle[radius=2pt];
+	    
+	    \draw (0,0) -- (B) ;
+	    \draw (B) arc (10:80:3cm) node[midway,above] {s};
+	    \draw (B) --(C) coordinate [midway] (d) node[midway,below, right] {a};
+	    \draw (C) --(0,0) node[midway,left] {R} ;
+	    \draw [dotted] (0,0) -- (d) node[midway,below,right]{r};
+	    \draw (10:0.4cm) arc (10:80:0.4cm) node [midway, above] {$\theta$};
 
+	\end{tikzpicture}
+\end{center}
+\begin{gather}
+\sin\left(\frac{\theta}{2}\right)=\frac{a/2}{R}\\
+\theta = 2 \arcsin\left(\frac{a}{2R}\right)\\
+a= d_e(x,y)\\
+s= R\theta\\
+d_i(x,y) = s = R \arcsin\left(\frac{d_e(x,y)}{2R}\right)\\
+d_i(x,y) = f\circ d_e(x,y)\\
+f(b) = R\arcsin\left(\frac{b}{2R}\right)
+\end{gather}
+It is useful to note that $\arcsin$ is only defined on the domain $[-1,1]$, and here the extrinsic metric is divided by its maximum for two points on the same sphere, $2R$, which normalizes the argument to $\arcsin$ to $[-1,1]$.
 
 \problem{}%5
  \emph{Triangle inequality and convexity}: Let $u\to |u|$ be a function $\mathbb{R}^n \to \mathbb{R}$ satisfying
@@ -112,4 +144,23 @@ Let $S^2 = \{x = (x_1,x_2,x_3)\in\mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2  = 1\}$ be
 \end{enumerate}
 
 \solution
+\part
+Suppose $|u+v|\le|u|+|v|$ and take $u,v\in B(0,r)$, $0\le\lambda\le1$, and $|u|,|v|\le r$.
+\begin{align}
+|\lambda u + (1-\lambda)v| &\le |\lambda u| + |(1-\lambda)v| = \lambda |u| + (1-\lambda)|v|\\
+&\le \lambda r + (1-\lambda )r = r\\
+|\lambda u + (1-\lambda )v| &\le r\\
+& \Longrightarrow \lambda{}u + (1-\lambda{})v \in B(0,r)\\
+& \rightarrow B(0,r)\text{ is convex.}
+\end{align}
+
+\part
+Suppose $|\lambda u + (1-\lambda)v| \le r$ for $u,v\in B(0,r)$ and let $\lambda=0.5$.
+\begin{align}
+	|0.5u + (1-0.5)v| &\le r]\\
+	(0.5|u+v| &\le r)\times 2\\
+	 |u +v| &\le 2r \le |u| + |v|\\
+	&\text{if } |u|=|v|=r
+\end{align}
+
 \end{document}
