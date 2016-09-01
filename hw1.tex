@@ -128,7 +128,7 @@ d_i(x,y) = s = R \arcsin\left(\frac{d_e(x,y)}{2R}\right)\\
 d_i(x,y) = f\circ d_e(x,y)\\
 f(b) = R\arcsin\left(\frac{b}{2R}\right)
 \end{gather}
-It is useful to note that $\arcsin$ is only defined on the domain $[-1,1]$, and here the extrinsic metric is divided by its maximum for two points on the same sphere, $2R$, which normalizes the argument to $\arcsin$ to $[-1,1]$.
+It is useful to note that $\arcsin$ is only defined on the domain $[-1,1]$, and here the extrinsic metric is divided by its maximum for two points on the same sphere, $2R$, which normalizes the argument to $\arcsin$ to $[-1,1]$. Combined with the metric $d_e$ being always positive, the domain is effectively limited to $[0,1]$.
 
 \problem{}%5
  \emph{Triangle inequality and convexity}: Let $u\to |u|$ be a function $\mathbb{R}^n \to \mathbb{R}$ satisfying
@@ -162,5 +162,14 @@ Suppose $|\lambda u + (1-\lambda)v| \le r$ for $u,v\in B(0,r)$ and let $\lambda=
 	 |u +v| &\le 2r \le |u| + |v|\\
 	&\text{if } |u|=|v|=r
 \end{align}
-
+For the general case, $|u|\ne |v|$:
+\begin{align}
+\text{Let } u &= \alpha \hat u\\
+v &=\beta \hat v\\
+\text{where }& |\hat u| = |\hat v| = 1\\
+\alpha \hat u + \beta \hat v & \left(\alpha + \beta\right)\left(\left(1-\frac{\beta}{\alpha + \beta}\right)\hat u + \frac{\beta}{\alpha + \beta}\hat v\right)=\gamma \left(\left(1-t\right)\hat u + t \hat v\right)\\
+\text{where }& \gamma = \alpha + \beta\; , \quad t= \frac{\beta}{\alpha + \beta}\\
+|u+v| = |\alpha \hat u + \beta \hat v| &= |\gamma| |\left(1-t\right)\hat u + t \hat v| \le |\gamma| 1 = |\gamma| = \alpha + \beta = |u|+|v|
+\end{align}
+thus the triangle inequality holds for points in a convex ball.
 \end{document}
