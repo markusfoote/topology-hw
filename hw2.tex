@@ -65,7 +65,7 @@ so $\to v = \lambda u$.
 
 
 \part{}
-Let $u = x-y$ and $v = y-z$:
+Let $u = x-y$ and $v = y-z$, thus:
 \begin{gather}
 d(x,z) = |u + v|\\
 d(x,y) = |u|\\
@@ -97,7 +97,7 @@ thus $y$ is closer to $x$ than $z$ is to $x$ and they are on the same line, so $
 \part{}
 $f$ is Lipschitz:
 \begin{gather}
-d'(f(x),f(y)) \le c\: d(x,y)\\
+d'\big(f(x),f(y)\big) \le c\: d(x,y)\\
 d'(x,y) \le c \: d(x,y)\\
 \sqrt{(x_1^2-y_1^2)+(1^2-1^2)} \le c\: \left(\sqrt{x_1^2+1^2}+\sqrt{y_1^2+1^2}\right) \text{ for } x\ne y\\
  \text{or }\:0=0 \text{ for } x= y\\
@@ -110,9 +110,9 @@ $f$ is not bi-Lipschitz:
 $f$ cannot be bi-Lipschitz if its inverse $f^{-1}$ is not Lipschitz. $f^{-1}$ cannot be Lipschitz if it is not continuous:
 $f^{-1}:(X,d')\to(X,d)$:
 \begin{gather}
-\forall x\in X,\forall \varepsilon >0 \:\exists \:\delta (=\delta (x,\varepsilon) )\: s.t.\: d'(x,y) < \delta, \: d(f^{-1}(x),f^{-1}(y)) < \varepsilon \\
+\forall x\in X,\forall \varepsilon >0 \:\exists \:\delta \big(=\delta (x,\varepsilon) \big)\: s.t.\: d'(x,y) < \delta, \: d\big(f^{-1}(x),f^{-1}(y)\big) < \varepsilon \\
 \text{Let } \mathbf{x}=(x,1), \mathbf{y}=(y,1),\: x,y>0,\:y>x>\varepsilon>0\\
-d(f^{-1}(\mathbf{x}),f^{-1}(\mathbf{y})) =d(\mathbf{x},\mathbf{y})= \sqrt{x^2 +1}+\sqrt{y^2+1}> \sqrt{y^2+1} > \sqrt{y^2} =y>\varepsilon
+d\big(f^{-1}(\mathbf{x}),f^{-1}(\mathbf{y})\big) =d(\mathbf{x},\mathbf{y})= \sqrt{x^2 +1}+\sqrt{y^2+1}> \sqrt{y^2+1} > \sqrt{y^2} =y>\varepsilon
 \end{gather}
 thus $f^{-1}$ is not continuous, thus not Lipschitz, thus $f$ is not bi-Lipschitz.
 
@@ -188,19 +188,19 @@ If $f\: : \: (X,d) \to (Y,d')$ is an isometry, then $f$ takes equality sets to e
 
 \part{}
 Using (a), we can investigate identity cases for a point $(x_1,0)$ or $(0,x_2)$:
-\begin{align}
-H\to H&: f(x_1,0) \to (ax_1,0) \: \text{for} \: a \in \mathbb{R}\\
-H \to V&: f(x_1,0) \to (0,bx_1) \: \text{for} \: b \in \mathbb{R}\\
-V \to H&: f(0,x_2) \to (cx_2,0) \: \text{for} \: c \in \mathbb{R}\\
-V \to V&: f(0,x_2) \to (0,dx_2) \: \text{for} \: d \in \mathbb{R}
-\end{align}
-We know that the origin is preserved ,$f((0,0)) \to (0,0)$, and using that $f$ is an isometry, 
+\begin{alignat}{3}
+H\to H&: f(x_1,0) \to (ax_1,0) \: &&\text{for} \: a \in \mathbb{R}\\
+H \to V&: f(x_1,0) \to (0,bx_1) \: &&\text{for} \: b \in \mathbb{R}\\
+V \to H&: f(0,x_2) \to (cx_2,0) \: &&\text{for} \: c \in \mathbb{R}\\
+V \to V&: f(0,x_2) \to (0,dx_2) \: &&\text{for} \: d \in \mathbb{R}
+\end{alignat}
+We know that the origin is preserved, $f((0,0)) \to (0,0)$, and using that $f$ is an isometry, 
 \begin{gather}
 d_1(f(x_1,0),f(0,0)) = d_1((ax_1,0),(0,0))\\
 |x_1|= |ax_1| \\
 \implies a = \pm 1
 \end{gather}
-A similar argument may be constructed for $b$, $c$, and $d$, so $|a|=|b|=|c|=|d|=|1|$. So a point on an axis must be mapped to a point on an axis that is the same $d_{(1)}$ distance from the origin. A similar point on a horizontal or vertical line with distance $k$ from the axis that intersects the line will be mapped to another vertical or horizontal line $k'$:
+A similar argument may be constructed for $b$, $c$, and $d$, so $|a|=|b|=|c|=|d|=|1|$, or independently, each $a,b,c,d = \pm 1$. So a point on an axis must be mapped to a point on an axis that is the \textit{same} $d_{(1)}$ distance from the origin. A similar point on a horizontal or vertical line with distance $k$ from the axis that intersects the line will be mapped to another vertical or horizontal line $k'$:
 \begin{equation}
 f(x_1,k) \to (\pm x_1,k')
 \end{equation}
@@ -209,9 +209,10 @@ Then, again as $f$ is an isometry:
 d_1\big(f(x_1,k),f(x_1,0)\big)=d_1\big((x_1,k),(x_1,0)\big)\\
 d_1(( ax_1,k'),(ax_1,0)) \\
 |ax_1 - ax_1| + |k' - 0| = |x_1 - x_1| + |k - 0|\\
-|k'| = |k|
+|k'| = |k|\\
+\implies k'=\pm k
 \end{gather}
-therefore as long as $k$ is the same distance above or below (positive or negative) from the axis, the $d_{(1)}$ distance is preserved. So for a point that is along a horizontal or vertical line, that point is still the same distance from the origin. And we know the zero-crossing of the line is the same distance from the origin. This all shows that an isometry  $f:(\mathbb{R}^2,d_{(1)})\to (\mathbb{R}^2,d_{(1)})$ that fixes the origin must be of the form $f((x_1,x_2) )= (\pm x_1,\pm x_2)$ or $f((x_1,x_2)) = (\pm x_2, \pm x_1)$.
+therefore as long as $k$ is the same distance above or below (positive or negative) from the axis, the $d_{(1)}$ distance is preserved. So for a point that is along a horizontal or vertical line, that point is still the same distance from the origin, without regard for the polarity. And we know the zero-crossing of the line is the same distance from the origin. This all shows that an isometry  $f:(\mathbb{R}^2,d_{(1)})\to (\mathbb{R}^2,d_{(1)})$ that fixes the origin must be of the form $f((x_1,x_2) )= (\pm x_1,\pm x_2)$ or $f((x_1,x_2)) = (\pm x_2, \pm x_1)$.
 
 \problem{}%5
 Let $S^2 = \{x = (x_1,x_2,x_3)\in\mathbb{R}^3 : x_1^2 + x_2^2 + x_3^2  = 1\}$ be the unit sphere  in $\mathbb{R}^3$.  Let $d_i(x,y) = \cos^{-1}(x\cdot y)$, where $x\cdot y$ is the usual dot product of vectors in $\mathbb{R}^3$, be the intrinsic metric on $S^2$ (length of the great circle arc joining $x$ and $y$).    Prove that $d_i$ satisfies the triangle inequality.
@@ -231,10 +232,10 @@ is $\ge 0$.   For $x,y,z\in S^2$, apply $\cos$ to both sides of the desired ineq
 \begin{gather}
 d(x,z)\le d(x,y)+d(y,z)\\
 \cos^{-1}(x\cdot z) \le \cos^{-1}(x\cdot y) + \cos^{-1}(y\cdot z)\\
-\cos(\cos^{-1}(x\cdot z)) \ge cos(\cos^{-1}(x\cdot y) + \cos^{-1}(y\cdot z))\\
-\text{apply } \cos(\alpha+\beta) = \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\\
+\cos(\cos^{-1}(x\cdot z)) \ge \cos(\cos^{-1}(x\cdot y) + \cos^{-1}(y\cdot z))\\
+\text{Apply } \cos(\alpha+\beta) = \cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)\\
 (x\cdot z) \ge \cos(\cos^{-1}(x\cdot y))\cos(\cos^{-1}(y\cdot z))-\sin(\cos^{-1}(x\cdot y))\sin(\cos^{-1}(y\cdot z))\\
-\text{apply } \sin(\cos^{-1}(x)) = \sqrt{ 1 -x^2}\\
+\text{Apply } \sin(\cos^{-1}(x)) = \sqrt{ 1 -x^2}\\
 (x\cdot z) \ge (x\cdot y)(y\cdot z)-\sqrt{ 1 -(x\cdot y)^2}\sqrt{ 1 -(y\cdot z)^2}\\
 \sqrt{ 1 -(x\cdot y)^2}\sqrt{ 1 -(y\cdot z)^2} \ge (x\cdot y)(y\cdot z)-(x\cdot z)\\
 \left(\sqrt{ 1 -(x\cdot y)^2}\sqrt{ 1 -(y\cdot z)^2}\right)^2 \ge \left((x\cdot y)(y\cdot z)-(x\cdot z)\right)^2\\
