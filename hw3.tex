@@ -1,0 +1,87 @@
+\documentclass{jhwhw}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{tikz}
+%\usepackage[makeroom]{cancel}
+%\usetikzlibrary{patterns}
+\title{MATH 5510: Topology: HW 3}
+\author{Markus Foote}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\T}{{\mathcal T}}
+
+\begin{document}
+\problem{}%1
+ Consider two topologies on $\R$:  the Euclidean (or usual) topology $\T_E$, and the topology $\T_{CF}$ in which the \emph{closed} sets are $\R$ and all the finite subsets of $\R$.
+ 
+ \begin{enumerate}
+ 	
+ 	\item Suppose $f:(\R,\T_E)\to (\R,\T_E)$ is continuous.  Prove that it is also continuous as a map $(\R,\T_E) \to (\R,\T_{CF})$.
+ 	
+ 	\item Give an example of  a continuous map $g:(\R,\T_E)\to (\R,\T_{CF})$ that is \emph{not} continuous as a map $(\R,\T_E)\to (\R,\T_E)$.
+ 	
+ 	\emph{Suggestion}:  Try strictly increasing piecewise linear maps.
+ 	
+ 	\item Find all continuous maps $f:(\R,\T_{CF})\to (\R,\T_E)$.
+ \end{enumerate}
+\solution{}
+\part{}
+Let $f: (\R,\T_E)\to(\R,\T_{CF})$. $f$ is continuous iff $\forall U \subset \T_{CF}$ when $U$ open in $\T_{CF} \implies f^{-1}(U)$ is open in $\T_E$.
+Let $$U = \left(\bigcup\limits_{i=1}^{N} x_i\right) ^{\mathsf{c}} $$ be an open set in the topology $\T_{CF}$, then by De Morgan's Laws $$ U = \bigcap\limits_{i=1}^{N}x_i^{\mathsf{c}}$$ where $x_i^{\mathsf{c}}$ is open in $\T_E$, and because finite intersections of open sets is open, $U$ must be open in $\T_E$. The mapping $f:(\R,\T_E)\to(\R,\T_E)$ is continuous $\implies f^{-1}(U)$ is open, thus $f$ is continuous. 
+
+\part{}
+
+
+
+\part{}
+
+\problem{} %2
+\begin{enumerate}
+	\item Let $(X,\T_X)$ and $(Y,\T_Y)$ be topologiclal spaces let $f,g:(X,\T_X)\to(Y,\T_Y)$ be continuous maps, and suppose that $(Y,\T_Y)$ is Hausdorff.   Prove that
+	$$
+	E(f,g) = \{x\in X \  | \  f(x) = g(x) \}
+	$$
+	is \emph{closed} in $(X,\T_X)$.
+	\item Give an example of two continuous maps $f,g$ with $E(f,g)$ not closed.  (If possible, try to find an example with $(X,\T_X)$ 
+	Hausdorff.)
+\end{enumerate}
+
+\solution{}
+
+\part{}
+
+\problem{}%3
+Let $(X,d)$ be a metric space, let $x\in X$ and let $A\subset X$ be non-empty.  Define the \emph{distance between $x$ and $A$}, denoted $d(x,A)$, by
+$$
+d(x,A) = \inf \{d(x,y)\  | \  y\in A\}.
+$$
+\begin{enumerate}
+	\item Prove that $d(x,A)$ is a continuous function of $x$. 
+	
+	\emph{Suggestion}:  Prove more: it is a Lipschitz function, with Lipschitz constant $1$.
+	
+	\item Prove that $d(x,A) = 0\  \Longleftrightarrow \  x\in\overline{A}$.
+	
+	\item Prove that, if $A$ is closed, then there exists a continuous function $f:X\to\R$ so that $ A = \{x\in X | f(x) = 0\}$.
+	
+	
+	
+	\item Suppose $A,B\subset X$ are \emph{closed} sets, non-empty, and \emph{disjoint}: $A\cap B = \emptyset$. Prove that there exists a contiuous function $g:X\to [0,1]$ such that 
+	$$
+	g(x) = 0 \Longleftrightarrow x\in A \hbox{ and } g(x) = 1 \Longleftrightarrow x\in B.
+	$$
+	
+	\emph{Suggestion}: Experiment with  functions with $d(x,A) + d(x,B)$ as denominator.
+	
+	\item Prove that if $A$ and $B$ are disjoint, non-empty, closed sets as above, there exist open sets $U,V\subset X$ so that $A\subset U, B\subset V$ and $U\cap V = \emptyset$.
+\end{enumerate}
+
+\solution{}
+\part{}
+
+
+\end{document}
