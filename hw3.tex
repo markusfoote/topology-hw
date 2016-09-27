@@ -1,7 +1,8 @@
 \documentclass{jhwhw}
 \usepackage{amsmath}
 \usepackage{amssymb}
-%\usepackage{tikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
 %\usepackage[makeroom]{cancel}
 %\usetikzlibrary{patterns}
 \title{MATH 5510: Topology: HW 3}
@@ -30,18 +31,68 @@
  \end{enumerate}
 \solution{}
 \part{}
-Let $f: (\R,\T_E)\to(\R,\T_{CF})$. $f$ is continuous iff $\forall U \subset \T_{CF}$ when $U$ open in $\T_{CF} \implies f^{-1}(U)$ is open in $\T_E$.
-Let $$U = \left(\bigcup\limits_{i=1}^{N} x_i\right) ^{\mathsf{c}} $$ be an open set in the topology $\T_{CF}$, then by De Morgan's Laws $$ U = \bigcap\limits_{i=1}^{N}x_i^{\mathsf{c}}$$ where $x_i^{\mathsf{c}}$ is open in $\T_E$, and because finite intersections of open sets is open, $U$ must be open in $\T_E$. The mapping $f:(\R,\T_E)\to(\R,\T_E)$ is continuous $\implies f^{-1}(U)$ is open, thus $f$ is continuous. 
+Let $f: (\R,\T_E)\to(\R,\T_{CF})$. $f$ is continuous iff $\forall U \subset \R$ when $U$ closed in $\T_{CF} \implies f^{-1}(U)$ is closed in $\T_E$.
+Let \begin{equation}U = \bigcup\limits_{i=1}^{N} x_i \end{equation} be a closed set in the topology $\T_{CF}$, then this set is also closed in $\T_E$ because a single point $x_i$ is closed and the closed sets are closed under finite union. The mapping $f:(\R,\T_E)\to(\R,\T_E)$ is continuous $\implies f^{-1}(U)$ is closed, thus $f$ is continuous. 
 
 \part{}
+A continuous map $g:(\R,\T_E)\to (\R,\T_{CF})$ that is \emph{not} continuous as $(\R,\T_E)\to (\R,\T_E)$ is \begin{equation}g(x) = \begin{cases} x & x\le 0 \\ x+1 & x >0 \end{cases}\end{equation} 
+This map is continuous $\T_E \to \T_{CF}$ as the preimage of any finite set of points (which is closed in $\T_{CF}$) is closed in $\T_E$:
+\begin{gather}
+\text{Let } U= \bigcup\limits_{i=1}^{N} x_i\\
+f^{-1}(U) = \left\{ \bigcup x_i \;\forall x_i \le 0 \right\} \cup \left\{\bigcup x_i+1 \; \forall x_i > 0\right\}
+\end{gather}
+where $x_i\in\R$, thus the preimage in $\T_E$ is a finite union of closed sets, which is also closed.
 
+$g:(\R,\T_E)\to (\R,\T_E)$ is \emph{not} continuous because the preimage of a $\T_E$-closed set is not $\T_E$-closed:
+\begin{gather}
+\text{Let } U= \left[\frac{1}{2},\frac{3}{2}\right]\\
+f^{-1}(U) = \left(0,\frac{1}{2}\right]
+\end{gather}
+This preimage is not $\T_E$-closed, so the map is not continuous, because a map is continuous iff the preimage of every closed set is closed.
 
-
+These diagrams illustrate these cases:
+\begin{center}
+	\begin{tabular}{ccc}
+		$g:(\R,\T_E)\to (\R,\T_{CF})$ cont.&\hspace{1cm}&$g:(\R,\T_E)\to (\R,\T_E)$ \emph{not} cont.\\
+		\begin{tikzpicture}
+		%\draw [help lines] (0,0) grid (4,4);
+		\draw [->](0,0) -- (0,4) node[midway,left] {$(\R,\T_{CF})$};
+		\draw [->](0,0) -- (4,0) node[midway,below] {$(\R,\T_E)$};
+		\draw [thick] (0,0) -- (1,1);
+		\node [draw,circle,thick,inner sep=1.5pt] (c) at (1,2) {};
+		\draw [thick] (c) -- (3,4);
+		\fill (1,1) circle[radius=2pt];
+		%draw the set in Y and its preimage
+		\foreach \a in {0.5, 1,2, 3, 3.5}
+			\fill (0,\a) circle[radius=2pt];
+		\foreach \a in {0.5,1,2,2.5}
+			\fill (\a,0) circle[radius=2pt];
+		\end{tikzpicture}&&
+		\begin{tikzpicture}
+		%\draw [help lines] (0,0) grid (4,4);
+		\draw [->](0,0) -- (0,4) node[midway,left] {$(\R,\T_{E})$};
+		\draw [->](0,0) -- (4,0) node[midway,below] {$(\R,\T_E)$};
+		\draw [thick] (0,0) -- (1,1);
+		\node [draw,circle,thick,inner sep=1.5pt] (c) at (1,2) {};
+		\draw [thick] (c) -- (3,4);
+		\fill (1,1) circle[radius=2pt];
+		%draw the set in Y and preimage
+		\draw [(-, thick] (1,0) -- (1.5,0);
+		\draw [[-, thick] (1.5,0) -- (1,0);
+		\fill[opacity = 0.1,rounded corners=2pt] (1,-0.1) -- (1.5, -0.1) -- (1.5, 0.1) -- (1,0.1) -- cycle;
+		\draw [[-, thick] (0,1.5) -- (0,2.5);
+		\draw [[-, thick] (0,2.5) -- (0,1.5);
+		\fill[opacity = 0.1,rounded corners=2pt] (-0.1,1.5) -- (-0.1, 2.5) -- (0.1, 2.5) -- (0.1,1.5) -- cycle;
+		\end{tikzpicture}
+	\end{tabular}
+\end{center}
+Note that for this $g$, $g^{-1}\big((1,2]\big)=\emptyset$, which is still closed.
 \part{}
+
 
 \problem{} %2
 \begin{enumerate}
-	\item Let $(X,\T_X)$ and $(Y,\T_Y)$ be topologiclal spaces let $f,g:(X,\T_X)\to(Y,\T_Y)$ be continuous maps, and suppose that $(Y,\T_Y)$ is Hausdorff.   Prove that
+	\item Let $(X,\T_X)$ and $(Y,\T_Y)$ be topological spaces let $f,g:(X,\T_X)\to(Y,\T_Y)$ be continuous maps, and suppose that $(Y,\T_Y)$ is Hausdorff.   Prove that
 	$$
 	E(f,g) = \{x\in X \  | \  f(x) = g(x) \}
 	$$
