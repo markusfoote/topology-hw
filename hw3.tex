@@ -87,8 +87,9 @@ These diagrams illustrate these cases:
 	\end{tabular}
 \end{center}
 Note that for this $g$, $g^{-1}\big((1,2]\big)=\emptyset$, which is still closed.
-\part{}
 
+\part{}
+Constant mappings.
 
 \problem{} %2
 \begin{enumerate}
@@ -125,8 +126,6 @@ $$
 	
 	\item Prove that, if $A$ is closed, then there exists a continuous function $f:X\to\R$ so that $ A = \{x\in X | f(x) = 0\}$.
 	
-	
-	
 	\item Suppose $A,B\subset X$ are \emph{closed} sets, non-empty, and \emph{disjoint}: $A\cap B = \emptyset$. Prove that there exists a contiuous function $g:X\to [0,1]$ such that 
 	$$
 	g(x) = 0 \Longleftrightarrow x\in A \hbox{ and } g(x) = 1 \Longleftrightarrow x\in B.
@@ -138,7 +137,58 @@ $$
 \end{enumerate}
 
 \solution{}
-\part{}
+\part{}%a
 
+
+\part{}%b
+
+
+
+\part{}%c
+The distance function given satisfies these conditions for $A$ closed:
+\begin{equation}
+f(x) = d(x,A): X\to \R\\
+\end{equation}
+$f$ is continuous as shown in (a). As shown in (b), $ A = \{x\in X | f(x) = 0\}$ as A is its own closure.
+
+\part{}%d
+The proposed function exists and can be defined as
+\begin{equation}
+g(x)= \frac{d(x,A)}{d(x,A)+d(x,B)}
+\end{equation}
+
+To show $x\in A \implies g(x) = 0$:
+\begin{gather}
+\text{(b) }\implies d(x,A)=0\\
+A\cap B = \emptyset \implies d(x,B)=\varepsilon, \: \varepsilon>0\\
+g(x) = \frac{0}{0+\varepsilon}=0
+\end{gather}
+
+To show $x\in B \implies g(x) = 1$:
+\begin{gather}
+\text{(b) }\implies d(x,B)=0\\
+A\cap B = \emptyset \implies d(x,A)=\varepsilon, \: \varepsilon>0\\
+g(x) = \frac{\varepsilon}{\varepsilon+0}=1
+\end{gather}
+
+To show $g(x) = 0\implies x\in A $:
+\begin{gather}
+g(x) = 0 \implies d(x,A)=0\\
+\text{(b) }\implies x\in A
+\end{gather}
+
+To show $g(x) = 1\implies x\in B $:
+\begin{gather}
+g(x) = 1 \implies d(x,A)=d(x,A)+d(x,B)\\
+d(x,A)-d(x,A)=d(x,B)\implies d(x,B)=0 \implies x\in B
+\end{gather}
+
+\part{}%e
+As $X$ is a metric space, it is metrizable, thus the topology on $X$ is Hausdorff. This allows the following constructions:
+\begin{gather}
+U=\bigcup\left\{ L\subset X | \forall x\in A,\: y\in B\text{ (so} x,y \in X \text{)}, \: L=\text{nbd}(x) \text{ open}, \: M=\text{nbd}(y) \text{ open, s.t. } L\cap M=\emptyset\right\}\\
+V=\bigcup\left\{ M\subset X | \forall x\in A,\: y\in B\text{ (so} x,y \in X \text{)}, \: L=\text{nbd}(x) \text{ open}, \: M=\text{nbd}(y) \text{ open, s.t. } L\cap M=\emptyset\right\}
+\end{gather}
+so the sets never intersect and meet the conditions.
 
 \end{document}
