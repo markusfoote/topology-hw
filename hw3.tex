@@ -82,7 +82,7 @@ These diagrams illustrate these cases:
 		\fill[opacity = 0.1,rounded corners=2pt] (1,-0.1) -- (1.5, -0.1) -- (1.5, 0.1) -- (1,0.1) -- cycle;
 		\draw [[-, thick] (0,1.5) -- (0,2.5);
 		\draw [[-, thick] (0,2.5) -- (0,1.5);
-		\fill[opacity = 0.1,rounded corners=2pt] (-0.1,1.5) -- (-0.1, 2.5) -- (0.1, 2.5) -- (0.1,1.5) -- cycle;
+		\fill[opacity = 0.1,rounded corners=0.02pt] (-0.1,1.5) -- (-0.1, 2.5) -- (0.1, 2.5) -- (0.1,1.5) -- cycle;
 		\end{tikzpicture}
 	\end{tabular}
 \end{center}
@@ -104,6 +104,12 @@ Note that for this $g$, $g^{-1}\big((1,2]\big)=\emptyset$, which is still closed
 \solution{}
 
 \part{}
+Suppose $f(x) \neq g(x)$, because $Y$ is Hausdorff $\exists\: U = \text{nbd } \text{of } f(x),\; V=\text{nbd } \text{of } g(x)$ where $U\cap V=\emptyset$. The preimages of these open sets remain open as $f,g$ continuous, and since they both contain $x$: $f^{-1}(U),\:g^{-1}(V)\subset X$ are open nbds of $x$. Let $W=f^{-1}(U)\cap g^{-1}(V) \implies x\in W$. $W$ is still open as $\T_X$ is closed under finite intersection. These $x$ are such that $f(x)\neq g(x)$, so they are in the complement of $E$: $x\in W\subset E^{\mathsf{c}} \implies E^{\mathsf{c}} \text{ open } \implies E \text{ closed}$. 
+
+
+\part{}
+
+
 
 \problem{}%3
 Let $(X,d)$ be a metric space, let $x\in X$ and let $A\subset X$ be non-empty.  Define the \emph{distance between $x$ and $A$}, denoted $d(x,A)$, by
