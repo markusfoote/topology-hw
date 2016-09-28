@@ -138,10 +138,33 @@ $$
 
 \solution{}
 \part{}%a
+To show this, let $x$ and $y$ be points in $X$ and $p$ be a point in $A$:
+$$d(x,p) \leq d(x,y) + d(y,p)\ \ \ \ \text{ (triangle inequality)}$$
+$$d(x,A) \leq d(x,y) + d(y,p)$$
 
+as $d(x,A)$ is the infimum. Then:
+$$ d(x,A) - d(x,y) \leq d(y,p) $$
+$$ d(x,A) - d(x,y) \leq d(y,A) $$
+
+as $d(y,A)$ is the infimum. Thus:
+\begin{gather}
+d(x,A) - d(y,A) \leq d(x,y) \label{eq:ineq}
+\end{gather}
+
+
+If we look at the definition of Lipschitz, $f$ is Lipshitz iff $d'(f(x),f(y)) \leq Cd(x,y)$. In this case $f$ is $d(x,A)$, thus:
+\begin{align}
+d'(f(x),f(y)) = d'(d(x,A),d(y,A)) &\leq Cd(x,y)  \nonumber\\ 
+\nonumber \\
+|d(x,A) - d(y,A)| &\leq Cd(x,y)\label{eq:lip}
+\end{align}
+
+In (\ref{eq:ineq}), the definition of Lipschitz, (\ref{eq:lip}), was proven with a Lipschitz constant of $C=1$.  $d(x,A)$ being Lipschitz $\implies d(x,A)$ is uniformly continuous $\implies d(x,A)$ is continuous.
 
 \part{}%b
+Let $x \in \bar{A}$. Then for any $\epsilon>0$ there exists an open ball $B_\epsilon(x)$ centered around $x$ and of radius $\epsilon$ such that $B_\epsilon(x) \cap A \neq \emptyset$. Let $y_\epsilon \in B_\epsilon(x) \cap A$. Then $d(x,A) \leq d(x,y_\epsilon) < \epsilon$, and since $\epsilon>0$ was arbitrary, it follows that $d(x,A) = \inf \{d(x,y_{\epsilon})\} = 0$.
 
+Conversely, if $d(x,A) = 0$ then for any $\epsilon>0$ there exists $y_\epsilon \in A$ such that $d(x,y_\epsilon) < \epsilon$, and so $B_{\epsilon}(x) \cap A \neq \emptyset$. But any open ball centered at $x$ will contain $B_{\epsilon}(x)$ for some $\epsilon>0$ and hence have nonempty intersection with $A$.
 
 
 \part{}%c
