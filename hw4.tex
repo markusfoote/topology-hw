@@ -1,0 +1,82 @@
+\documentclass{jhwhw}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+%\usepackage[makeroom]{cancel}
+%\usetikzlibrary{patterns}
+\title{MATH 5510: Topology: HW 4}
+\author{Markus Foote}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\T}{{\mathcal T}}
+\newcommand{\B}{{\mathcal B}}
+\begin{document}
+\problem{}%1
+Let $X$ be a topological space, give $X\times X$ the product topology, and let the \lq\lq diagonal"  $\Delta\subset X\times X$ be defined by 
+$$
+\Delta =\{ (x,x): x\in X\}.
+$$
+\begin{enumerate}
+	
+	\item Prove that $X$ is Hausdorff if and only if $\Delta$ is closed in $X\times X$.
+	
+	\item Use this fact to give another proof of the fact proved in a previous homework problem:  If $Z$ is another topological space, $f,g:Z\to X$ are continuous, and $X$ is Hausdorff, then
+	$$
+	E(f,g) = \{x\in Z \ | \ f(x) = g(x)\}
+	$$ 
+	is closed in $Z$.  Make sure your proof takes at most two lines.
+\end{enumerate}
+\solution{}
+\part{}
+
+
+
+\problem{} %2
+Give an example of a topological space $X$ and a compact subset $C\subset X$ with $C$ not closed in $X$.
+\solution{}
+Let $X=\left\{ 0,1\right\}$, and give this space the indiscrete topology $\T=\left\{ \emptyset, Xright\}$.
+
+
+\problem{}%3
+Let $X$ be a compact Hausdorff space, and let $A,B\subset X$ be closed sets which are  disjoint : $A\cap B =\emptyset$.  Prove that there are open sets $U,V\subset X$ with $A\subset U$, $B\subset V$, and $U\cap V = \emptyset$. 
+
+\solution{}
+
+
+
+
+\problem{}%4
+\begin{enumerate}
+	\item Let $(X,\T)$ be a topological space and let $\B$ be a basis for $\T$.  Prove that $(X,\T)$ is compact if and only if every cover of $X$ by elements of $\B$ has a finite sub-cover. 
+	\item Let $X$ and $Y$ be compact topological spaces and let $X\times Y$ be their product, with the product topology.   Prove that $X\times Y$ is compact.
+	
+\end{enumerate}
+\solution{}
+\part{}%a
+
+\part{}%b
+
+\problem{}%5
+We have seen that the Cantor set can be described as the set $\{0,2\}^\N$ of infinite sequences of zeros and twos, which is in bijective correspondence with the more convenient set $\{0,1\}^\N$ of infinite sequences of zeros and ones.  This choice has  the advantage that $\{0,1\}$ can be  naturally identified with $\Z/2$, the integers modulo two, which forms a group under addition:  $ 0 + 0 = 1+ 1 = 0, 0+1 = 1+ 0 = 1$.  In this way the Cantor set becomes a group, by pointwise addition of sequences: $\{a_i\} + \{b_i\} = \{a_i + b_i \}$.  
+
+\emph{ Prove that this operation is continuous}. This means that the  addition  map
+$$
+A: \{0,1\}^\N\times\{0,1\}^\N \to \{0,1\}^\N 
+$$
+defined by
+$$
+A(\{a_1,a_2,\dots, a_i,\dots  \},\{b_1,b_2,\dots, b_i,\dots\})  = \{a_1 + b_1, a_2+b_2,\dots , a_i +b_i,\dots \}
+$$
+is continuous, where $\{0,1\}^\N$ is given the (infinite) product topology, and $\{0,1\}^\N\times\{0,1\}^\N$ the product (two factors) of the infinite product topologies in each factor.
+
+\emph{Suggestion}:  Fix $i_0\in\N$, and  fix an open set $U\subset \{0,1\}$ (so  $U $ is one of $\emptyset, \{0\}, \{1\},\{0,1\}$).  The sets $A^{-1}(\{ \{a_i\} \ | \ a_{i_0}\in U\})$ form a sub-basis (see notes, v1,  3.4.3)  for the topology of $\{0,1\}^\N$, so it is enough to show that $A^{-1}(\{ \{a_i\} \ | \ a_{i_0}\in U\})$ is open.
+
+\solution{}
+
+
+\end{document}
