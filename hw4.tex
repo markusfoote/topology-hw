@@ -33,20 +33,26 @@ $$
 \end{enumerate}
 \solution{}
 \part{}
+Suppose $X$ is Hausdorff. $\Delta^{\mathbf{c}}=\{(x,y)\ | \ x\ne y,\ x,y\in X\}$. $X$ being Hausdorff provides $U,V \mathrm{ open }\subset X$ with $x\in U$, $y\in V$. $U\times V$ is thus a basis element with $(x,y) \in U\times V$. Because $U$ and $V$ are disjoint from the Hausdorff condition, they contain no common points, so they contain nothing in $\Delta$: $U\times V \subset \Delta^{mathbf{c}}\implies \Delta^{\mathbf{c}}$ open $\implies \Delta$ closed in $X\times X$.
+
+Suppose $\Delta$ is closed in $X\times X$. $\forall (x,y)\in \Delta^{\mathbf{c}} \exists U\times V$ basis element with $(x,y)\in U\times V \subset \Delta^{\mathbf{c}}$. $U\times V \subset \Delta^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in X \implies (x,y)\in \Delta^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $X$ is Hausdorff.
+
+
+\part{}
 
 
 
 \problem{} %2
 Give an example of a topological space $X$ and a compact subset $C\subset X$ with $C$ not closed in $X$.
 \solution{}
-Let $X=\left\{ 0,1\right\}$, and give this space the indiscrete topology $\T=\left\{ \emptyset, X\right\}$.
+Let $X=\left\{ 0,1\right\}$ and give this space the discrete topology $\T=\left\{ \emptyset,\ \{0\},\ \{1\},\ X\right\}$. The open subset $C=\left\{ 1\right\}$ is compact as only open cover $\B =\left\{0,1\right\}$ has the trivial finite subcover of $U_{\alpha_1}=0, U_{\alpha_2}=1$. 
 
 
 \problem{}%3
 Let $X$ be a compact Hausdorff space, and let $A,B\subset X$ be closed sets which are  disjoint : $A\cap B =\emptyset$.  Prove that there are open sets $U,V\subset X$ with $A\subset U$, $B\subset V$, and $U\cap V = \emptyset$. 
 
 \solution{}
-
+Let $b\in B$. For each $a\in A,\ U_a\ni a,\ V_a\ni b$ open s.t. $U_a \cap V_a=\emptyset$. The collection of $U_a$ form an open cover of $A$, which implies a finite subcover $U_{a_1},\ldots,U_{a_n}$. 
 
 
 
@@ -58,6 +64,11 @@ Let $X$ be a compact Hausdorff space, and let $A,B\subset X$ be closed sets whic
 \end{enumerate}
 \solution{}
 \part{}%a
+First assume X is compact then take a covering of X by members of B since each member of B is open we have a open covering of X, then because X is compact the covering by members of B have a finite subcovering.
+
+Second assume every covering by members of B have a finite subcovering. Take a open covering of X call it \{U_{\alpha},\alpha \in A\}, by definition each U_\alpha is union of elements of B, then take set formed for all the elements of B which are contained in some U_\alpha. By definition this set is a open covering of X by elements of B, then it have a finite subcovering B_1,B_2,...,B_n each one contained in at least one element of \{U_{\alpha},\alpha \in A\}, for each B_i,i=1..n pick U_i,i=1..n with the property B_i \subset U_i, then U_1,U_2,...,U_n is a finite subcovering of X (because B_1,B_2,...,B_n it is)
+
+Yeah, maybe rewrite that....
 
 \part{}%b
 
