@@ -33,22 +33,24 @@ $$
 \end{enumerate}
 \solution{}
 \part{}
-Suppose $X$ is Hausdorff. $\Delta^{\mathbf{c}}=\{(x,y)\ | \ x\ne y,\ x,y\in X\}$. $X$ being Hausdorff provides $U,V \mathrm{ open }\subset X$ with $x\in U$, $y\in V$. $U\times V$ is thus a basis element with $(x,y) \in U\times V$. Because $U$ and $V$ are disjoint from the Hausdorff condition, they contain no common points, so they contain nothing in $\Delta$: $U\times V \subset \Delta^{mathbf{c}}\implies \Delta^{\mathbf{c}}$ open $\implies \Delta$ closed in $X\times X$.
+Suppose $X$ is Hausdorff. $\Delta^{\mathbf{c}}=\{(x,y)\ | \ x\ne y,\ x,y\in X\}$. $X$ being Hausdorff provides $U,V\ \mathrm{ open }\subset X$ with $x\in U$, $y\in V$. $U\times V$ is thus a basis element with $(x,y) \in U\times V$. Because $U$ and $V$ are disjoint from the Hausdorff condition, they contain no common points, so they contain nothing in $\Delta$: $U\times V \subset \Delta^{\mathbf{c}}\implies \Delta^{\mathbf{c}}$ open $\implies \Delta$ closed in $X\times X$.
+\\
 
 Suppose $\Delta$ is closed in $X\times X$. $\forall (x,y)\in \Delta^{\mathbf{c}} \exists U\times V$ basis element with $(x,y)\in U\times V \subset \Delta^{\mathbf{c}}$. $U\times V \subset \Delta^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in X \implies (x,y)\in \Delta^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $X$ is Hausdorff.
 
 
 \part{}
 \begin{gather}
-\Delta = \{(f(x),g(y)\ | \ f(x) = g(y),\ f(x),g(y) \in X, x \in Z\} \subset X \times X\\
-because \ X \ is \ {Hausdorff} \ \implies \Delta \ closed, \ f,g \ cont \ \implies \left( \Delta \ closed \implies E \ closed \right)
+\Delta = \{(f(x),g(y))\ | \ f(x) = g(y)\} \subset X \times X \ \mathrm{ s.t. }\ E = F^{-1}(\Delta) \\
+X \ \mathrm{Hausdorff}\implies \Delta \ \mathrm{closed.} \ f,g \ \mathrm{cont.} \implies \left( \Delta\ \mathrm{closed} \implies E(f,g)\ \mathrm{ closed} \right).
 \end{gather}
+\\
 
 
 \problem{} %2
 Give an example of a topological space $X$ and a compact subset $C\subset X$ with $C$ not closed in $X$.
 \solution{}
-Let $X=\left\{ 0,1\right\}$ and give this space the discrete topology $\T=\left\{ \emptyset,\ \{0\},\ \{1\},\ X\right\}$. The open subset $C=\left\{ 1\right\}$ is compact as only open cover $\B =\left\{0,1\right\}$ has the trivial finite subcover of $U_{\alpha_1}=0, U_{\alpha_2}=1$. 
+Let $X=\left\{ 0,1\right\}$ and give this space the topology $\T=\left\{ \emptyset,\  \{1\},\ X\right\}$. The open subset $C=\left\{ 1\right\}$ is compact because the only open cover $\B =\left\{0,1\right\}$ has the trivial finite subcover of $U_{\alpha_1}=0, U_{\alpha_2}=1$. 
 
 
 \problem{}%3
@@ -72,9 +74,10 @@ Because $V_b$ forms an open cover of $B$ and B compact, there exists a finite nu
 %http://math.stackexchange.com/questions/718301/prove-that-x-is-compact-if-and-only-if-every-cover-of-x-by-members-of-b-ha
 \part{}%a
 
-First suppose that $(X,\T)$ is compact. Using the definition for a basis $\B$ of a topological space that the elements $B_i \in \B$ form a cover of $\T$, which has $X \in \T$, we can form a cover of $X$ from elements $B_i$. Because $\B$ is a basis for $\T$, each element $B_i$ is an open set, which means that the cover of $X$ is open, and because $X$ is compact, the cover has a finite subcovering.
+Suppose that $(X,\T)$ is compact. Using the definition for a basis $\B$ of a topological space that the elements $B_i \in \B$ form a cover of $\T$, which has $X \in \T$, we can form a cover of $X$ from elements $B_i$. Because $\B$ is a basis for $\T$, each element $B_i$ is an open set, which means that the cover of $X$ is open, and because $X$ is compact, the cover has a finite subcovering.
+\\
 
-Second, we suppose that every covering of $X$ by $B_i$ has a finite subcover. Let  $U_{\alpha}, \ \alpha \in A$ be an open covering of $X$.  By definition, each element of $U_{\alpha}$ is a union of elements of $\B$. Now take the set $U_{\alpha}$ such that $\B \subset U_{\alpha}$. This $U_{\alpha}$, by definition, is an open covering of $X$ by elements $B_i \in \B$.  Since we assumed that every cover has a finite subcover, this $U_{\alpha}$ has a finite subcovering $B_1,B_2, \dots, B_i$ with each one contained in at least one element of $U_{\alpha}, \alpha \in A$. For each $B_i$, we can choose a $U_i$ such that $B_i \subset U_i$, which means that $\{U_i\}$ is a finite subcovering of $X$, which implies that $X$ is compact.
+Suppose that every covering of $X$ by $B_i$ has a finite subcover. Let  $U_{\alpha}, \ \alpha \in A$ be an open covering of $X$.  By definition, each element of $U_{\alpha}$ is a union of elements of $\B$. Now take the set $U_{\alpha}$ such that $\B \subset U_{\alpha}$. This $U_{\alpha}$, by definition, is an open covering of $X$ by elements $B_i \in \B$.  Since we assumed that every cover has a finite subcover, this $U_{\alpha}$ has a finite subcovering $B_1,B_2, \dots, B_i$ with each one contained in at least one element of $U_{\alpha}, \alpha \in A$. For each $B_i$, we can choose a $U_i$ such that $B_i \subset U_i$, which means that $\{U_i\}$ is a finite subcovering of $X$, which implies that $X$ is compact.
 
 \part{}%b
 %http://math.stackexchange.com/questions/567335/cartesian-product-of-compact-sets-is-compact
@@ -82,10 +85,10 @@ Second, we suppose that every covering of $X$ by $B_i$ has a finite subcover. Le
 Let $\{O_{\alpha}\}_{\alpha \in A}$ be an open cover of $X \times Y$. For each $(x,y) \in X\times Y$ we can choose some $\alpha=\alpha(x,y)$ such that $(x,y) \in O_{\alpha(x,y)}$. Because of how it was constructed, $O_{\alpha(x,y)}$ is open, which means $(x,y)$ is contained in some open rectangle $R \subset O_{\alpha(x,y)}$ where $R = U_{(x,y)} \times V_{(x,y)}$ with $U_{(x,y)} \subset X$ and $V_{(x,y)} \subset Y$.  
 
 
-Now fix $x$ and allow $y$ to vary. For every point $(x,y)$ we find that the point is contained in an open rectangle in the product $X \times Y$, and that rectangle is the product of a subset of $X$ with a subset of $Y$. Choosing several points, we see that the collection of sets $\{V_{(x,y)}\}_{y \in Y}$ is an open cover of $Y$. Because $Y$ is compact, we can find a finite cover $\{V_{(x,y_i(x))}\}$ of $Y$ that consists of finitely many open sets containing points $\{(x,y_i(x))\}$.
+Fix $x$, and allow $y$ to vary. For every point $(x,y)$ the point is contained in an open rectangle in the product $X \times Y$, and that rectangle is the product of a subset of $X$ with a subset of $Y$. Choosing several points, we see that the collection of sets $\{V_{(x,y)}\}_{y \in Y}$ is an open cover of $Y$. Because $Y$ is compact, we can find a finite cover $\{V_{(x,y_i(x))}\}$ of $Y$ that consists of finitely many open sets containing points $\{(x,y_i(x))\}$.
 
 
-Finally, we let $U_x = \cap_{i} U_{(x,y_i(x))}$. Because $U_x$ is the intersection of finitely many open sets, it is itself open. Using that $X$ is compact, there are finitely many $x_j$ such that $\{U_{x_j}\}$ forms an open cover of $X$. It follows that $\{O_{x_i,y_i(x)}\}$ for any $i,j$ combination is a finite cover of $X \times Y$, which means that $X \times Y$ is compact.
+Let $U_x = \cap_{i} U_{(x,y_i(x))}$. Because $U_x$ is the intersection of finitely many open sets, it is itself open. Using that $X$ is compact, there are finitely many $x_j$ such that $\{U_{x_j}\}$ forms an open cover of $X$. It follows that $\{O_{x_i,y_i(x)}\}$ for any $i,j$ combination is a finite cover of $X \times Y$, which means that $X \times Y$ is compact.
 
 \problem{}%5
 We have seen that the Cantor set can be described as the set $\{0,2\}^\N$ of infinite sequences of zeros and twos, which is in bijective correspondence with the more convenient set $\{0,1\}^\N$ of infinite sequences of zeros and ones.  This choice has  the advantage that $\{0,1\}$ can be  naturally identified with $\Z/2$, the integers modulo two, which forms a group under addition:  $ 0 + 0 = 1+ 1 = 0, 0+1 = 1+ 0 = 1$.  In this way the Cantor set becomes a group, by pointwise addition of sequences: $\{a_i\} + \{b_i\} = \{a_i + b_i \}$.  
@@ -103,6 +106,32 @@ is continuous, where $\{0,1\}^\N$ is given the (infinite) product topology, and 
 \emph{Suggestion}:  Fix $i_0\in\N$, and  fix an open set $U\subset \{0,1\}$ (so  $U $ is one of $\emptyset, \{0\}, \{1\},\{0,1\}$).  The sets $A^{-1}(\{ \{a_i\} \ | \ a_{i_0}\in U\})$ form a sub-basis (see notes, v1,  3.4.3)  for the topology of $\{0,1\}^\N$, so it is enough to show that $A^{-1}(\{ \{a_i\} \ | \ a_{i_0}\in U\})$ is open.
 
 \solution{}
+Fix $i_0 \in \N$. Let $U \subset \{0,1\}$ be open. We show that the preimage, $A^{-1}(\{ \{a_i\} \ | \ a_{i_0}\in U\})$, is open for each possible open set $U$:
+\\
 
+For $a_{i_0}\in \emptyset$:
+\begin{equation}
+\text{Trivially, } A^{-1}(\emptyset) = \emptyset \text{ which is open.}
+\end{equation}
 
+For $a_{i_0}\in \{0\}$: 
+\begin{align}A^{-1}(\{0\}) &= (\{0\},\{0\})\cup(\{1\},\{1\}) \\
+&= (\{0,1\},\{0,1\}) \text{ which is open.}
+\end{align}
+
+For $a_{i_0}\in \{1\}$: 
+\begin{align}A^{-1}(\{1\}) &= (\{0\},\{1\})\cup(\{1\},\{0\}) \\
+&= (\{0,1\},\{1,0\})\\
+&= (\{0,1\},\{0,1\}) \text{ which is open.}
+\end{align}
+
+For $a_{i_0}\in \{0,1\}$: 
+\begin{align}A^{-1}(\{0,1\}) &= (\{0,1\},\{0,1\})\cup(\{0,1\},\{0,1\}) \\
+&= (\{0,1\},\{0,1\}) \text{ which is open.}
+\end{align}
+
+This shows the preimage of all open sets remains open, thus $A$ is continuous. 
+\\
+
+Note that the value at the $i_0$ position depends {\em only} on the corresponding values at the $i_0$ position in the product space \textendash position gets preserved.
 \end{document}
