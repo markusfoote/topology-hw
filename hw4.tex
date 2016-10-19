@@ -36,12 +36,12 @@ $$
 Suppose $X$ is Hausdorff. $\Delta^{\mathbf{c}}=\{(x,y)\ | \ x\ne y,\ x,y\in X\}$. $X$ being Hausdorff provides $U,V\ \mathrm{ open }\subset X$ with $x\in U$, $y\in V$. $U\times V$ is thus a basis element with $(x,y) \in U\times V$. Because $U$ and $V$ are disjoint from the Hausdorff condition, they contain no common points, so they contain nothing in $\Delta$: $U\times V \subset \Delta^{\mathbf{c}}\implies \Delta^{\mathbf{c}}$ open $\implies \Delta$ closed in $X\times X$.
 \\
 
-Suppose $\Delta$ is closed in $X\times X$. $\forall (x,y)\in \Delta^{\mathbf{c}} \exists U\times V$ basis element with $(x,y)\in U\times V \subset \Delta^{\mathbf{c}}$. $U\times V \subset \Delta^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in X \implies (x,y)\in \Delta^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $X$ is Hausdorff.
+Suppose $\Delta$ is closed in $X\times X$. $\forall\ (x,y)\in \Delta^{\mathbf{c}}\  \exists\ U\times V$ basis element with $(x,y)\in U\times V \subset \Delta^{\mathbf{c}}$. $U\times V \subset \Delta^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in X \implies (x,y)\in \Delta^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $X$ is Hausdorff.
 
 
 \part{}
 \begin{gather}
-\Delta = \{(f(x),g(y))\ | \ f(x) = g(y)\} \subset X \times X \ \text{ s.t. }\ E(f,g) = F^{-1}(\Delta) \\
+\Delta = \{(f(x),g(y))\ | \ f(x) = g(y)\} \subset X \times X \text{ s.t. } E(f,g) = F^{-1}(\Delta) \\
 X \ \text{Hausdorff}\implies \Delta \ \text{closed.} \ f,g \ \text{cont.} \implies \left( \Delta\ \text{closed} \implies E(f,g)\ \text{closed} \right).
 \end{gather}
 \\
@@ -61,7 +61,7 @@ Let $X$ be a compact Hausdorff space, and let $A,B\subset X$ be closed sets whic
 Let $b \in B$. For each $a \in A$ we have $a \in U_a ,\ b \in V_a $ with $U_a, V_a$ open such that $U_a \cap V_a = \emptyset$ because $X$ is Hausdorff. The collection $\{U_a\}$ forms an open cover of $A$, so as A is compact there exists a finite subcover of A $U_{a_1}, U_{a_2}, \ldots, U_{a_k}$. Let $U_b = U_{a_1} \cup U_{a_2} \cup \dots \cup U_{a_k}$ which is finite union of open sets, so it is open. Now let $V_b = V_{a_1} \cap V_{a_2} \cap \dots \cap V_{a_k}$. The $\{V_b\}$ form an open cover of $B$, and for each $b \in B, V_b \cap U_b = \emptyset$.  Note that for every $b$, $A \subset U_b$. 
 \\
 
-Because $V_b$ forms an open cover of $B$ and B compact, there exists a finite number of them such that $ \bigcup V_{b_i}$ is a finite subcover of $B$. This union of open sets is also open. The union of $\{U_{b_i}\}$ is likewise open. $A$ is contained in each $U_{b_i}$, so their union also contains $A$. We know that each $U_{b_i}$ is disjoint from $V_{b_i}$ so it follows that $\bigcup U_{b_i} \cap \left( \cap V_{b_i} \right) = \emptyset$, thus $\bigcup U_{b_i}$ and $\bigcap V_{b_i}$ are the open sets that are disjoint and contain $A\subset\bigcup U_{b_i} ,\ B\subset\bigcap V_{b_i} $.  
+Because $V_b$ forms an open cover of $B$ and B compact, there exists a finite number of them such that $ \bigcup V_{b_i}$ is a finite subcover of $B$. This union of open sets is also open. The union of $\{U_{b_i}\}$ is likewise open. $A$ is contained in each $U_{b_i}$, so their union also contains $A$. We know that each $U_{b_i}$ is disjoint from $V_{b_i}$ so it follows that $\bigcup U_{b_i} \cap\  \bigcap V_{b_i}  = \emptyset$, thus $\bigcup U_{b_i}$ and $\bigcap V_{b_i}$ are the open sets that are disjoint and contain $A\subset\bigcup U_{b_i} ,\ B\subset\bigcap V_{b_i} $.  
 
 
 
