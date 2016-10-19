@@ -41,8 +41,8 @@ Suppose $\Delta$ is closed in $X\times X$. $\forall (x,y)\in \Delta^{\mathbf{c}}
 
 \part{}
 \begin{gather}
-\Delta = \{(f(x),g(y))\ | \ f(x) = g(y)\} \subset X \times X \ \mathrm{ s.t. }\ E = F^{-1}(\Delta) \\
-X \ \mathrm{Hausdorff}\implies \Delta \ \mathrm{closed.} \ f,g \ \mathrm{cont.} \implies \left( \Delta\ \mathrm{closed} \implies E(f,g)\ \mathrm{ closed} \right).
+\Delta = \{(f(x),g(y))\ | \ f(x) = g(y)\} \subset X \times X \ \text{ s.t. }\ E(f,g) = F^{-1}(\Delta) \\
+X \ \text{Hausdorff}\implies \Delta \ \text{closed.} \ f,g \ \text{cont.} \implies \left( \Delta\ \text{closed} \implies E(f,g)\ \text{closed} \right).
 \end{gather}
 \\
 
@@ -59,6 +59,7 @@ Let $X$ be a compact Hausdorff space, and let $A,B\subset X$ be closed sets whic
 \solution{}
 %http://math.stackexchange.com/questions/923600/disjoint-compact-subsets-of-a-hausdorff-space-are-separated-by-disjoint-open-nei
 Let $b \in B$. For each $a \in A$ we have $a \in U_a ,\ b \in V_a $ with $U_a, V_a$ open such that $U_a \cap V_a = \emptyset$ because $X$ is Hausdorff. The collection $\{U_a\}$ forms an open cover of $A$, so as A is compact there exists a finite subcover of A $U_{a_1}, U_{a_2}, \ldots, U_{a_k}$. Let $U_b = U_{a_1} \cup U_{a_2} \cup \dots \cup U_{a_k}$ which is finite union of open sets, so it is open. Now let $V_b = V_{a_1} \cap V_{a_2} \cap \dots \cap V_{a_k}$. The $\{V_b\}$ form an open cover of $B$, and for each $b \in B, V_b \cap U_b = \emptyset$.  Note that for every $b$, $A \subset U_b$. 
+\\
 
 Because $V_b$ forms an open cover of $B$ and B compact, there exists a finite number of them such that $ \bigcup V_{b_i}$ is a finite subcover of $B$. This union of open sets is also open. The union of $\{U_{b_i}\}$ is likewise open. $A$ is contained in each $U_{b_i}$, so their union also contains $A$. We know that each $U_{b_i}$ is disjoint from $V_{b_i}$ so it follows that $\bigcup U_{b_i} \cap \left( \cap V_{b_i} \right) = \emptyset$, thus $\bigcup U_{b_i}$ and $\bigcap V_{b_i}$ are the open sets that are disjoint and contain $A\subset\bigcup U_{b_i} ,\ B\subset\bigcap V_{b_i} $.  
 
@@ -83,12 +84,12 @@ Suppose that every covering of $X$ by $B_i$ has a finite subcover. Let  $U_{\alp
 %http://math.stackexchange.com/questions/567335/cartesian-product-of-compact-sets-is-compact
 
 Let $\{O_{\alpha}\}_{\alpha \in A}$ be an open cover of $X \times Y$. For each $(x,y) \in X\times Y$ we can choose some $\alpha=\alpha(x,y)$ such that $(x,y) \in O_{\alpha(x,y)}$. Because of how it was constructed, $O_{\alpha(x,y)}$ is open, which means $(x,y)$ is contained in some open rectangle $R \subset O_{\alpha(x,y)}$ where $R = U_{(x,y)} \times V_{(x,y)}$ with $U_{(x,y)} \subset X$ and $V_{(x,y)} \subset Y$.  
-
+\\
 
 Fix $x$, and allow $y$ to vary. For every point $(x,y)$ the point is contained in an open rectangle in the product $X \times Y$, and that rectangle is the product of a subset of $X$ with a subset of $Y$. Choosing several points, we see that the collection of sets $\{V_{(x,y)}\}_{y \in Y}$ is an open cover of $Y$. Because $Y$ is compact, we can find a finite cover $\{V_{(x,y_i(x))}\}$ of $Y$ that consists of finitely many open sets containing points $\{(x,y_i(x))\}$.
+\\
 
-
-Let $U_x = \cap_{i} U_{(x,y_i(x))}$. Because $U_x$ is the intersection of finitely many open sets, it is itself open. Using that $X$ is compact, there are finitely many $x_j$ such that $\{U_{x_j}\}$ forms an open cover of $X$. It follows that $\{O_{x_i,y_i(x)}\}$ for any $i,j$ combination is a finite cover of $X \times Y$, which means that $X \times Y$ is compact.
+Let $U_x = \bigcap_{i} U_{(x,y_i(x))}$. Because $U_x$ is the intersection of finitely many open sets, it is itself open. Using that $X$ is compact, there are finitely many $x_j$ such that $\{U_{x_j}\}$ forms an open cover of $X$. It follows that $\{O_{x_i,y_i(x)}\}$ for any $i,j$ combination is a finite cover of $X \times Y$, which means that $X \times Y$ is compact.
 
 \problem{}%5
 We have seen that the Cantor set can be described as the set $\{0,2\}^\N$ of infinite sequences of zeros and twos, which is in bijective correspondence with the more convenient set $\{0,1\}^\N$ of infinite sequences of zeros and ones.  This choice has  the advantage that $\{0,1\}$ can be  naturally identified with $\Z/2$, the integers modulo two, which forms a group under addition:  $ 0 + 0 = 1+ 1 = 0, 0+1 = 1+ 0 = 1$.  In this way the Cantor set becomes a group, by pointwise addition of sequences: $\{a_i\} + \{b_i\} = \{a_i + b_i \}$.  
