@@ -1,0 +1,98 @@
+\documentclass{jhwhw}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+%\usepackage[makeroom]{cancel}
+%\usetikzlibrary{patterns}
+\title{MATH 5510: Topology: HW 5}
+\author{Markus Foote}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\T}{{\mathcal T}}
+\newcommand{\B}{{\mathcal B}}
+\begin{document}
+\problem{}%1
+\begin{enumerate}
+	
+	\item Let $X,Y$ be topological spaces and let $q:X\to Y$ be a continuous open surjection. Define 
+	$Q:X\times X \to Y\times Y$ by  $Q(x_1,x_2) = (q(x_1),q(x_2)).$  
+	Prove that $Q$ is a continuous open surjection.  In particular, $Q$ is an identification.
+	\item Let $X$ be a Hausdorff space, let $q:X\to Y$ be an open map and an identification, and let $R\subset X\times X$ be the equivalence relation defined by $q$, that is,
+	$$
+	R = \{ (x_1,x_2)\in X\times X \ | \ q(x_1) = q(x_2) \}.
+	$$
+	Prove that $Y$ is Hausdorff if and only if $R$  is closed in $X\times X$. 
+	
+	\noindent\emph{Suggestion} Observe that  $R = Q^{-1}(\Delta_Y)$ where $\Delta_Y\subset Y\times Y$ is the diagonal.  Refer to Problem (1) of Homework 4.
+	
+	\item How does this apply to the example $X =( 0\times\R )\cup (1\times \R)$ and identification $0\times x \sim 1\times x$ for all $x<0$ discussed in class?
+\end{enumerate}
+\solution{}
+\part{}%a
+
+
+\part{}%b
+
+
+\part{}%c
+
+
+\problem{} %2
+In class we discussed when a continuous map $f:X\to Z$ descends to a continuous map $g:Y\to Z$ under an identification $q:X\to Z$.  Prove the analogous statement for maps from one identification space to another: If $q_1$ qnd $q_2$ are identifications and the following diagram commutes,
+\begin{eqnarray*}
+	\begin{array}{ccc}
+		X_1 & \buildrel f \over\longrightarrow & X_2 \\
+		{q_1}\Big\downarrow &  & {q_2}\Big\downarrow\\
+		Y_1 & \buildrel g \over\dashrightarrow & Y_2
+	\end{array}
+\end{eqnarray*}
+then $f$ is continuous if and only if $g$ is continuous.   Prove this directly from the definition of identifications, without quoting the theorem proved in class.
+\solution{}
+
+
+\problem{}%3
+Using the following models $Y = X/\sim$ for the Torus, Klein bottle, M\"obius strip and circle,	
+\begin{eqnarray*}
+	\begin{array}{ccccl}
+		T & = & [0,2]\times [-1,1] & / & (x,-1)\sim (x,1), (0,y)\sim (2,y)\\
+		K & = & [0,1]\times [-1,1]  & / & (x,-1) \sim (x,1), (0,y)\sim (1,-y)\\
+		M & = & [0,1]\times [-1/2,1/2] & / & (0,y)\sim (1,-y)\\
+		S^1 & = & [0,1] & / & 0\sim 1
+	\end{array}
+\end{eqnarray*}
+check the commutativity of the diagram in Problem (2) for the following  maps  $f_i, g_i$, thus proving  that the maps $g_i$ are well-defined and continuous. Draw pictures!
+\begin{enumerate}
+	
+	\item $g_1: K \to S^1$ defined by $ f_1(x,y) = x$
+	\item $g_2: M \to K$ defined by $f_2 (x,y) = (x,y)$ 
+	\item $g_3:T\to K$ defined by $f_3(x,y) = (x,y)$ if $0\le x\le 1$, and $f_3(x,y) = (x-1,-y)$ if $1\le x\le 2$.
+\end{enumerate}
+\solution{}
+\part{}%a
+
+
+\part{}%b
+
+
+\part{}%c
+
+\problem{}%4
+\begin{enumerate}
+	\item Describe the fibers (= pre-images of points) of $g_1$ and of $g_3$.
+	\item Prove that the closure of the complement of $g_2(M)$ in $K$  is homeomorphic to $M$.
+	
+\end{enumerate}
+\solution{}
+\part{}%a
+
+\part{}%b
+
+
+
+
+\end{document}
