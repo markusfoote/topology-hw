@@ -38,21 +38,22 @@
 \part{}%a
 \textit{Continuous:} Any open set $U \in Y\times Y$ has continuous projections to each factor in the product, thus $\exists\ V,W \text{ open} \in Y s.t.\ U=V\times W$. These open sets are in the codomain of $q$, which is also continuous, so by taking another pre-image there are corresponding open sets in $X$: $\exists\ S,T \text{ open} \in X$. As there is the product topology on $X\times X$, these open sets in $S,T\in X$ are an element of the basis for the topology on $X\times X$, so $S\times T \text{ open} \in X\times X$. Thus the pre-image through $Q$ of any open set $U$ is $S\times T$ which is open, so $Q$ is continuous.
 
- \textit{Open:} Apply the argument for continuity in reverse, except that use $q$ being an open map preserves open-ness instead of it being continuous.
+ \textit{Open:} For any open set $U \in X\times X$, there are projections to each factor of the product which are also open. As $q$ is an open map, these open sets in $X$ are mapped to open sets in $Y$. As $Y\times Y$ has the product topology, these open sets are in the basis for the topology on $Y\times Y$ so their product is also open in $Y\times Y$, thus $Q$ is an open map. (This is the same argument as for continuity but in reverse, except using $q$ as an open map preserves open-ness instead of continuity.)
 
- \textit{Surjection:} ???
+ \textit{Surjection:} Given any $(y_1,y_2) \in Y\times Y,\ \exists (x_1,x_2)\in X\times X\ s.t.\ Q((x_1,x_2))=(y_1,y_2)$. This is because each factor in the product is independently mapped by a surjective map $q$, thus the product is also surjective.
 
-\noindent Thus by Theorem 4.17, $Q$ is an identification.
+Thus by Theorem 4.17 from the course notes, $Q$ is an identification.
 
 \part{}%b
-\noindent Suppose $Y$ is Hausdorff. $\Delta_Y^{\mathbf{c}}=\{(x,y)\ | \ x\ne y,\ x,y\in Y\}$. $Y$ being Hausdorff provides $U,V\text{ open}\subset Y$ with $x\in U$, $y\in V$. $U\times V$ is thus a basis element with $(x,y) \in U\times V$. Because $U$ and $V$ are disjoint (from the Hausdorff condition), they contain no common points, so they contain nothing in $\Delta_Y$: $U\times V \subset \Delta_Y^{\mathbf{c}}\implies \Delta_Y^{\mathbf{c}}$ open $\implies \Delta_Y$ closed in $Y\times Y$.
+\noindent Suppose $Y$ is Hausdorff. $\Delta_Y^{\mathbf{c}}=\{(x_1,x_2)\ | \ q(x_1)\ne q(x_2),\ (x_1,x_2)\in X\times X\}$. $Y$ being Hausdorff provides $U,V\text{ open}\subset Y$ with $x_1\in U$, $x_2\in V$. $U\times V$ is thus a basis element with $(x_1,x_2) \in U\times V$. Because $U$ and $V$ are disjoint (from the Hausdorff condition), they contain no common points, so they contain nothing in $\Delta_Y$: $U\times V \subset \Delta_Y^{\mathbf{c}}\implies \Delta_Y^{\mathbf{c}}$ open $\implies \Delta_Y$ closed in $Y\times Y$. As $R = Q^{-1}(\Delta_Y)$ and $Q$ continuous, $R$ must be closed in $X\times X$.
 \\
 
 \noindent
-Suppose $\Delta_Y$ is closed in $Y\times Y$. $\forall\ (x,y)\in \Delta_Y^{\mathbf{c}}\  \exists\ U\times V$ basis element with $(x,y)\in U\times V \subset \Delta_Y^{\mathbf{c}}$. $U\times V \subset \Delta_Y^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in Y \implies (x,y)\in \Delta_Y^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $Y$ is Hausdorff.
+Suppose $R$ is closed in $X\times X$.  ???
+%Suppose $R$ is closed in $X\times X$. $\forall\ (x_1,x_2)\in R\  \exists\ U\times V$ basis element with $(x,y)\in U\times V \subset \Delta_Y^{\mathbf{c}}$. $U\times V \subset \Delta_Y^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in Y \implies (x,y)\in \Delta_Y^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $Y$ is Hausdorff.
 
 \part{}%c
-\noindent From our discussion in class, we know X is not Hausdorff. This is mainly because there do not exist open neighborhoods around the \lq two separate\rq\ zeros. This can also be shown since $R$ is not closed in $X\times X$: $R$ is the set of all equivalence points, which is by definition open in this case because the lines are equivalent for $x<0$ which is open at 0.
+\noindent From our discussion in class, we know X is not Hausdorff. This is mainly because there do not exist open neighborhoods around the \lq two separate\rq\ zeros. This can also be shown since $R$ is not closed in $X\times X$: $R$ is the set of all equivalence points, which is not closed in this case because the lines are equivalent for $x<0$ which is open at 0.
 
 \problem{} %2
 \noindent
@@ -67,7 +68,12 @@ In the following diagram suppose that the maps with solid arrows are given, that
 If $y\in Y_1$ choose  $x\in X_1$ with $q_1(x) = y$ and define $g(y) = q_2(f(x))$.  Prove that $g$ is well-defined, the whole diagram commutes, and, if $f$ is continuous, so is $g$.
 \solution{}
 \noindent
+$g$ is well-defined because if there exist multiple $x_1, x_2 \in X_1\ s.t.\ q_1(x_1)=q_1(x_2)=y$, these two $x_1, x_2$ are mapped to the same point in $Y_2$. This is because the map $f$ will preserve the fibers of $q_1$ and $q_2$, and that $q_1$ and $q_2$'s fibers/equivalence classes will reduce these multiple $x$ to equivalent points in $Y_2$.
 
+Because $g(y) = q_2(f(x))$ is well defined, and $y=q_1(x)$ for some $x\in X_1$, the diagram commutes because $g(q_1(x)) = q_2(f(x))$.
+
+If $f$ is continuous, so is $g$ ???
+\\
 
 What does it mean to say \lq\lq $g$ is well-defined\rq\rq ? How is well-defined different from the definition given in the problem?
 
