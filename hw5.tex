@@ -69,15 +69,14 @@ If $y\in Y_1$ choose  $x\in X_1$ with $q_1(x) = y$ and define $g(y) = q_2(f(x))$
 \solution{}
 \noindent
 $g$ is well-defined because if there exist multiple $x_1, x_2 \in X_1\ s.t.\ q_1(x_1)=q_1(x_2)=y$, these two $x_1, x_2$ are mapped to the same point in $Y_2$. This is because the map $f$ will preserve the fibers of $q_1$ and $q_2$, and that $q_1$ and $q_2$'s fibers/equivalence classes will reduce these multiple $x$ to equivalent points in $Y_2$.
-
-Because $g(y) = q_2(f(x))$ is well defined, and $y=q_1(x)$ for some $x\in X_1$, the diagram commutes because $g(q_1(x)) = q_2(f(x))$.
-
-If $f$ is continuous, so is $g$ ???
 \\
 
-What does it mean to say \lq\lq $g$ is well-defined\rq\rq ? How is well-defined different from the definition given in the problem?
+\noindent
+Because $g(y) = q_2(f(x))$ is well defined, and $y=q_1(x)$ for some $x\in X_1$, the diagram commutes because $g(q_1(x)) = q_2(f(x))$.
+\\
 
-How do we show $f$ continuous $\implies g$ continuous? Is this just by the usual definition of pre-images of open sets are open?
+\noindent
+If $f$ is continuous, so is $g$ ???
 
 
 
@@ -101,20 +100,23 @@ check that the following maps $f:X_1\to X_2$ satisfy the condition of problem (2
 	\item $g:T\to K$ defined from $f(x,y) = (x,y)$ if $0\le x\le 1$, and $f_3(x,y) = (x-1,-y)$ if $1\le x\le 2$.\  (Here $X_1 = [0,2]\times [-1,1], X_2 = [0,1]\times [-1,1] $)
 \end{enumerate}
 \solution{}
-\noindent
-Need we show all conditions? or just that f is continuous?
-Are pictures sufficient as proofs?
+\noindent Continuous maps will map equivalence classes to equivalence classes, shown for each case.
 
 \part{}%a
-\noindent
+\begin{center}
+	\includegraphics[height=1.35in]{5_3a.png}
+\end{center}
 
 
 \part{}%b
-\noindent
-Can the preimage be the empty set? for the regions in the plane that are outside of [-1/2,1/2].
+\begin{center}
+	\includegraphics[height=1.05in]{5_3b.png}
+\end{center}
 
 \part{}%c
-\noindent
+\begin{center}
+	\includegraphics[height=0.65in]{5_3c.png}
+\end{center}
 
 
 \problem{}%4
@@ -126,14 +128,25 @@ Can the preimage be the empty set? for the regions in the plane that are outside
 \solution{}
 \part{}%a
 \noindent
-The fibers of $g_1$, the map of the Klein bottle to the circle, are circles on the Klein bottle surface that wrap around the \lq smaller\rq\ axis of the Klein bottle. These circles do not wrap through the \lq mismatched\rq\ identified \lq edge\rq\ of the Klein bottle, although one fiber does exist exactly along this \lq edge of identification\rq.
-\\
+The fibers of $g_1$, the map of the Klein bottle to the circle, are circles on the Klein bottle surface that wrap around the \lq smaller\rq\ axis of the Klein bottle. These circles do not wrap through the \lq mismatched\rq\ identified \lq edge\rq\ of the Klein bottle, although one fiber does exist exactly along this \lq edge of identification\rq. These fibers are drawn in purple on the following diagram.
+\begin{center}
+	\includegraphics[height=2.2in]{5_4a1.png}
+\end{center}
+
 
 \noindent
-The fibers of $g_3$, the map of the Torus to the Klein bottle, are each two points on the torus. These points are equidistant from the upper and lower identified edges in the plane (and equidistant from the horizontal zero) and both shifted an equal amount from zero of 1 in the first dimension. Thus in the torus, these points are radially symmetric but on upper or lower halves of the torus (however this is dependent on the identified edge of the torus being the most outer or inner ring and not on the top, bottom, or anywhere in between).
+The fibers of $g_3$, the map of the Torus to the Klein bottle, are each two points on the torus. These points are equidistant from the upper and lower identified edges in the plane (and equidistant from the horizontal zero) and both shifted an equal amount from zero of 1 in the first dimension. Thus in the torus, these points are radially symmetric but on upper or lower halves of the torus (however this is dependent on the identified edge of the torus being the most outer or inner ring and not on the top, bottom, or anywhere in between). These fibers are drawn in purple and blue in the following diagram. The pink depicts the identified edge.
+\begin{center}
+	\includegraphics[height=2.2in]{5_4a2.png}
+\end{center}
+
 \part{}%b
-\noindent
-Do we do this in the plane or on the bottle?
+\noindent The m\"obius strip is shown on the \lq sides\rq\ of the Klein bottle (shaded in gray, bounded by blue), and it complement is the \lq top and bottom\rq\ (shaded in gray in the second panel). The closure ensures that the edges are included in both m\"obius strips. The equivalent depiction of the planar represntation is shown on the next line, with the final panel showing the top and bottom edges being identifications and how they come together to form another m\"obius strip.
+\begin{center}
+	\includegraphics[height=2in]{5_4b1.png}\\
+	\vskip 1cm
+	\includegraphics[height=1.5in]{5_4b2.png}
+\end{center}
 
 
 

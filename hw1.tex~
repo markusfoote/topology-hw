@@ -1,0 +1,17 @@
+\documentclass{jhwhw}
+\usepackage{amsmath}
+
+\title{MATH 5510: Topology: HW 1}
+\author{Markus Foote}
+
+\begin{document}
+\problem{}
+    Let $$d_{(2)}(x,y)=\sqrt{(x_1-y_1)^@+\cdots+(x_n-y_n)^2}$$ be the Euclidian distance funciton in $\mathbb{R}^n$ and let $$d_{(1)}(x,y)=|x_1-y_1|+\cdots+|x_n-y_n|$$ be the ''taxicab'' distance, where, as usual, $x=(x_1,\dots,x_n)$ and$y=(y_1,\dots,y_n)$. Prove the following two inequalities that compart eht two distancees and discuss the case of eqality in each inequality. $$d_{(2)}(x,y)\leq d_{(1)}(x,y)\leq \sqrt{n}d_{(2)}(x,y).$$
+\solution
+\part
+$$y=mx+b$$
+\part
+explanation here
+
+
+\end{document}
