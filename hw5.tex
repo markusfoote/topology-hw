@@ -1,3 +1,5 @@
+% !TeX encoding = UTF-8
+
 \documentclass{jhwhw}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -34,25 +36,38 @@
 \end{enumerate}
 \solution{}
 \part{}%a
+how can we apply q to Q?
 
+Are basis the right approach to build the product topology on YxY? 
+
+Do we also have to 'deconstruct' the XxX topology with continuous projections?
 
 \part{}%b
+Suppose $Y$ is Hausdorff. $\Delta_Y^{\mathbf{c}}=\{(x,y)\ | \ x\ne y,\ x,y\in Y\}$. $Y$ being Hausdorff provides $U,V\text{ open}\subset Y$ with $x\in U$, $y\in V$. $U\times V$ is thus a basis element with $(x,y) \in U\times V$. Because $U$ and $V$ are disjoint (from the Hausdorff condition), they contain no common points, so they contain nothing in $\Delta_Y$: $U\times V \subset \Delta_Y^{\mathbf{c}}\implies \Delta_Y^{\mathbf{c}}$ open $\implies \Delta_Y$ closed in $Y\times Y$.
+\\
 
+\noindent
+Suppose $\Delta_Y$ is closed in $Y\times Y$. $\forall\ (x,y)\in \Delta_Y^{\mathbf{c}}\  \exists\ U\times V$ basis element with $(x,y)\in U\times V \subset \Delta_Y^{\mathbf{c}}$. $U\times V \subset \Delta_Y^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in Y \implies (x,y)\in \Delta_Y^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $Y$ is Hausdorff.
 
 \part{}%c
-
+X not Hausdorff, because Diagonal cannot be closed since it is open at 0? 
 
 \problem{} %2
-In class we discussed when a continuous map $f:X\to Z$ descends to a continuous map $g:Y\to Z$ under an identification $q:X\to Z$.  Prove the analogous statement for maps from one identification space to another: If $q_1$ qnd $q_2$ are identifications and the following diagram commutes,
+In the following diagram suppose that the maps with solid arrows are given, that $q_1$ and $q_2$ are identifications and that $f$ sends fibers of $q_1$ to fibers of $q_2$.  This means:   if $x_1,x_2\in X_1$ and $q_1(x_1) = q_1(x_2)$, then $q_2(f(x_1)) = q_2(f(x_2)$.
 \begin{eqnarray*}
 	\begin{array}{ccc}
 		X_1 & \buildrel f \over\longrightarrow & X_2 \\
-		{q_1}\Big\downarrow &  & {q_2}\Big\downarrow\\
+		{q_1}\downarrow &  & {q_2}\downarrow\\
 		Y_1 & \buildrel g \over\dashrightarrow & Y_2
 	\end{array}
 \end{eqnarray*}
-then $f$ is continuous if and only if $g$ is continuous.   Prove this directly from the definition of identifications, without quoting the theorem proved in class.
+If $y\in Y_1$ choose  $x\in X_1$ with $q_1(x) = y$ and define $g(y) = q_2(f(x))$.  Prove that $g$ is well-defined, the whole diagram commutes, and, if $f$ is continuous, so is $g$.
 \solution{}
+
+What does it mean to say ''$g$ is well-defined''? How is well-defined different from the definition given in the problem?
+
+How do we show $f$ continuous $\implies g$ continuous? Is this just by the usual definition of pre-images of open sets are open?
+
 
 
 \problem{}%3
@@ -65,33 +80,43 @@ Using the following models $Y = X/\sim$ for the Torus, Klein bottle, M\"obius st
 		S^1 & = & [0,1] & / & 0\sim 1
 	\end{array}
 \end{eqnarray*}
-check the commutativity of the diagram in Problem (2) for the following  maps  $f_i, g_i$, thus proving  that the maps $g_i$ are well-defined and continuous. Draw pictures!
+and letting $q:X\to Y$ be the map that sends each $x\in X$ to its equivalence class,
+check that the following maps $f:X_1\to X_2$ satisfy the condition of problem (2), thus define continuous maps $g:Y_1\to Y_2$.  We describe this process briefly  as  \lq\lq $g$ is defined from $f$":
 \begin{enumerate}
 	
-	\item $g_1: K \to S^1$ defined by $ f_1(x,y) = x$
-	\item $g_2: M \to K$ defined by $f_2 (x,y) = (x,y)$ 
-	\item $g_3:T\to K$ defined by $f_3(x,y) = (x,y)$ if $0\le x\le 1$, and $f_3(x,y) = (x-1,-y)$ if $1\le x\le 2$.
+	\item $g: K \to S^1$ defined from $ f(x,y) = x$ \ \ (Here $X_1= [0,1]\times [-1,1] , X_2 = [0,1]$)
+	\item $g: M \to K$ defined from $f (x,y) = (x,y)$ \\ (Here $X_1= [0,1]\times [-1/2,1/2] ,X_2 = [0,1]\times [-1,1]$)
+	\item $g:T\to K$ defined from $f(x,y) = (x,y)$ if $0\le x\le 1$, and $f_3(x,y) = (x-1,-y)$ if $1\le x\le 2$.\  (Here $X_1 = [0,2]\times [-1,1], X_2 = [0,1]\times [-1,1] $)
 \end{enumerate}
 \solution{}
+Need we show all conditions? or just that f is continuous?
+Are pictures sufficient as proofs?
+
 \part{}%a
 
 
 \part{}%b
-
+Can the preimage be the empty set? for the regions in the plane that are outside of [-1/2,1/2].
 
 \part{}%c
 
+
 \problem{}%4
 \begin{enumerate}
-	\item Describe the fibers (= pre-images of points) of $g_1$ and of $g_3$.
-	\item Prove that the closure of the complement of $g_2(M)$ in $K$  is homeomorphic to $M$.
+	\item Describe the fibers (= pre-images of points) of $g$  in parts (a) and (c).
+	\item Prove that in (b),  the closure of the complement of $g(M)$ in $K$  is homeomorphic to $M$.
 	
 \end{enumerate}
 \solution{}
 \part{}%a
-
+The fibers of $g_1$, the map of the Klein bottle to the circle, are circles on the klein bottle surface that wrap around the "smaller" axis of the Klein bottle. These circles do not wrap through the "mismatched" identified "edge" of the klein bottle, although one fiber does exist exactly along this "reversely identified edge".
+\\
+\\
+\noindent
+The fibers of $g_3$, the map of the Torus to the Klein bottle, are each two points on the torus. These points are equidistant from the upper and lower identified edges in the plane (and equidistant from the horizontal zero) and both shifted an equal amount from zero of 1 in the first dimension. Thus in the torus, these points are radially symmetric but on upper or lower halves of the torus (however this is dependent on the identified edge of the torus being the most outer or inner points and not on the top, bottom, or anywhere in between).
 \part{}%b
 
+Do we do this in the plane or on the bottle?
 
 
 
