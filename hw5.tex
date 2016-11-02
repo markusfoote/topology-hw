@@ -45,12 +45,11 @@
 Thus by Theorem 4.17 from the course notes, $Q$ is an identification.
 
 \part{}%b
-\noindent Suppose $Y$ is Hausdorff. $\Delta_Y^{\mathbf{c}}=\{(x_1,x_2)\ | \ q(x_1)\ne q(x_2),\ (x_1,x_2)\in X\times X\}$. $Y$ being Hausdorff provides $U,V\text{ open}\subset Y$ with $x_1\in U$, $x_2\in V$. $U\times V$ is thus a basis element with $(x_1,x_2) \in U\times V$. Because $U$ and $V$ are disjoint (from the Hausdorff condition), they contain no common points, so they contain nothing in $\Delta_Y$: $U\times V \subset \Delta_Y^{\mathbf{c}}\implies \Delta_Y^{\mathbf{c}}$ open $\implies \Delta_Y$ closed in $Y\times Y$. As $R = Q^{-1}(\Delta_Y)$ and $Q$ continuous, $R$ must be closed in $X\times X$.
+\noindent Suppose $Y$ is Hausdorff. $\Delta_Y^{\mathbf{c}}=\{(y_1,y_2)\in Y\times Y\ | \ y_1\ne y_2\}$. $Y$ being Hausdorff provides $U,V\text{ open}\subset Y$ with $y_1\in U$, $y_2\in V$. $U\times V$ is thus a basis element with $(y_1,y_2) \in U\times V$. Because $U$ and $V$ are disjoint (from the Hausdorff condition), they contain no common points, so they contain nothing in $\Delta_Y$: $U\times V \subset \Delta_Y^{\mathbf{c}}\implies \Delta_Y^{\mathbf{c}}$ open $\implies \Delta_Y$ closed in $Y\times Y$. As $R = Q^{-1}(\Delta_Y)$ and $Q$ continuous, $R$ must be closed in $X\times X$.
 \\
 
 \noindent
-Suppose $R$ is closed in $X\times X$.  ???
-%Suppose $R$ is closed in $X\times X$. $\forall\ (x_1,x_2)\in R\  \exists\ U\times V$ basis element with $(x,y)\in U\times V \subset \Delta_Y^{\mathbf{c}}$. $U\times V \subset \Delta_Y^{\mathbf{c}} \implies U\cap V=\emptyset$. Any $x\ne y\in Y \implies (x,y)\in \Delta_Y^{\mathbf{c}}$ with a basis element containing $(x,y)$ which provides open, disjoint $U,\ V$ with $x\in U$, $y\in V$, thus $Y$ is Hausdorff.
+Suppose $R$ is closed in $X\times X$. $R^{\mathbf{c}}$ is open. $Q$ is an open map, thus $Q(R^{\mathbf{c}})$ is open. As Q is also surjective, $Q(R^{\mathbf{c}})=\Delta_Y^{\mathbf{c}}$. $\Delta_Y^{\mathbf{c}}$ open $\implies\Delta_Y$ closed $\implies Y$ Hausdorff as shown in HW4.
 
 \part{}%c
 \noindent From our discussion in class, we know X is not Hausdorff. This is mainly because there do not exist open neighborhoods around the \lq two separate\rq\ zeros. This can also be shown since $R$ is not closed in $X\times X$: $R$ is the set of all equivalence points, which is not closed in this case because the lines are equivalent for $x<0$ which is open at 0.
@@ -76,7 +75,7 @@ Because $g(y) = q_2(f(x))$ is well defined, and $y=q_1(x)$ for some $x\in X_1$, 
 \\
 
 \noindent
-If $f$ is continuous, so is $g$ ???
+Suppose $f$ is continuous. For an open set $U \in Y_2$, the pre-image $f^{-1}(q_2^{-1}(U))$ is also open. Because the diagram commutes, this shows the composition map $g(q_1(x))$ is continuous as the same open set has an open pre-image. $q_1$ is an identification, and $g(q_1(x))$ continuous $\implies g$ continuous by Thm 4.20 of the course notes.
 
 
 
@@ -135,7 +134,7 @@ The fibers of $g_1$, the map of the Klein bottle to the circle, are circles on t
 
 
 \noindent
-The fibers of $g_3$, the map of the Torus to the Klein bottle, are each two points on the torus. These points are equidistant from the upper and lower identified edges in the plane (and equidistant from the horizontal zero) and both shifted an equal amount from zero of 1 in the first dimension. Thus in the torus, these points are radially symmetric but on upper or lower halves of the torus (however this is dependent on the identified edge of the torus being the most outer or inner ring and not on the top, bottom, or anywhere in between). These fibers are drawn in purple and blue in the following diagram. The pink depicts the identified edge.
+The fibers of $g_3$, the map of the Torus to the Klein bottle, are each two points on the torus. These points are equidistant from the upper and lower identified edges in the plane (and equidistant from the horizontal zero) and both shifted an equal amount from zero or 1 in the first dimension. Thus in the torus, these points are radially symmetric but on upper or lower halves of the torus (however this is dependent on the identified edge of the torus being the most outer or inner ring and not on the top, bottom, or anywhere in between). These fibers are drawn in purple and blue in the following diagram. The pink depicts the identified edge.
 \begin{center}
 	\includegraphics[height=2.2in]{5_4a2.png}
 \end{center}
