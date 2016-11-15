@@ -1,0 +1,66 @@
+% !TeX encoding = UTF-8
+\documentclass{jhwhw}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{indentfirst}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+%\usepackage[makeroom]{cancel}
+%\usetikzlibrary{patterns}
+\title{MATH 5510: Topology: HW 6}
+\author{Markus Foote}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\T}{{\mathcal T}}
+\newcommand{\B}{{\mathcal B}}
+\begin{document}
+\problem{}%1
+A topological space $X$ is said to be \emph{locally connected} if it has a basis consisting of connected open sets.
+\begin{enumerate}
+	\item Prove that if $X$ is locally connected, then its connected components are open.
+	\item Prove that if $X$ is locally connected and $Y$ is the space of its connected components, with the identification topology, then $Y$ is discrete.
+\end{enumerate}
+\solution{}
+\part{}
+\part{}
+
+
+\problem{} %2
+Recall that a topological space $X$ is said to be \emph{totally disconnected} if for all $x\in X$, the connected component $C_x$ of $X$ containing $x$ is simply $\{x\}$.  %A discrete space is totally disconnected.  The purpose of this exercise is to show that the Cantor set $\{0,1\}^\N$ is totally disconnected, but is the opposite of discrete:  every point is an accumulation point.  Here, as usual, the two point space $\{0,1\}$ has the discrete topology.
+\begin{enumerate}
+	
+	\item Let $X$ be a topological space, and suppose that for all $x,y \in X, x\ne y$, there exists a continuous  function $f:X\to \{0,1\}$ with $f(x)\ne f(y)$. Prove that $X$ is totally disconnected.
+	
+	
+	\item Prove that $\{0,1\}^\N$ (with the product topology) is totally disconnected.
+	
+	\item Let $ x \in \{0,1\}^\N$ be an arbitrary point.  Prove that $x$ is an accumulation point, that is, given any nbd $U $ of $x$ there exists $y\in U$ such that $y\ne x$.  
+\end{enumerate}
+\solution{}
+\part{}%a
+\part{}%b
+\part{}%c
+
+
+\problem{}%3
+Let $S^2\subset \mathbb{R}^3$ be the unit sphere centered at the origin, and  let $N = (0,0,1)$ be the north pole.  \emph{Stereographic  projection from the north pole} is the map   $f:S^2\setminus\{N\}\to\mathbb{R}^2$ defined by letting  $f(p)$ be the point of intersection with $\mathbb{R}^2 = \{(x,y,z)\in\mathbb{R}^3:z=0\}$ of the straight line through $N$ and $p$.  
+\begin{enumerate}
+	\item Find a formula for $f$
+	\item Find a formula for the inverse map $g:\mathbb{R}^2\to S^2\setminus 
+	\{N\}$. 
+	\item
+	Use stereographic projections from both the north and south poles to cover $S^2$ by the domain of two coordinate charts to $\R^2$ with a smooth transition function.  Conclude that $S^2$ is a smooth surface.
+\end{enumerate} 
+
+\solution{}
+
+\part{}%a
+\part{}%b
+\part{}%c
+
+
+\end{document}
