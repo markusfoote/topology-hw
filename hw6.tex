@@ -28,7 +28,7 @@ A topological space $X$ is said to be \emph{locally connected} if it has a basis
 \part{}%a
 Let $x\in C$, where $C$ is a connected component of $X$. By definition, $x$ is contained in some open connected subset $U$ of $X$. Since $C$ is a maximal connected set containing $x$, $x\in U\subseteq C$. Because $C$ is thus the union of all possible $U$ and openness is closed under arbitrary union, this shows that $C$ is open in $X$.
 \part{}%b
-
+In the identification topology on Y, the open sets are defined as sets of which the pre-image is open. If Y is to be discrete, then every set must be open. Because openness is closed under arbitrary union, if we show that all points are open then every set will be open. A point in the identification topology will be open if and only if the pre-image of that point is open. The pre-image of a point is a connected component. All connected components are open by (a). Thus points in Y are open, thus Y is discrete.
 
 \problem{} %2
 Recall that a topological space $X$ is said to be \emph{totally disconnected} if for all $x\in X$, the connected component $C_x$ of $X$ containing $x$ is simply $\{x\}$.  %A discrete space is totally disconnected.  The purpose of this exercise is to show that the Cantor set $\{0,1\}^\N$ is totally disconnected, but is the opposite of discrete:  every point is an accumulation point.  Here, as usual, the two point space $\{0,1\}$ has the discrete topology.
@@ -43,10 +43,11 @@ Recall that a topological space $X$ is said to be \emph{totally disconnected} if
 \end{enumerate}
 \solution{}
 \part{}%a
-
+Because a connected subset has a continuous, constant function that maps that subset to $\{0,1\}$ (Thm 5.2), we know that there are no connected subsets that contain both $x$ and $y$. (If there were such a connected subset, then a continuous constant function must exist for that set, which would violate $f(x)\neq f(y)$). Thus connected subsets cannot contain more than one point $\implies$ Connected subsets of X are single points $\implies$ X is totally disconnected.
 \part{}%b
+Here we apply (a) because the product topology gives continuous projection functions which, in this case, map to $\{0,1\}$. For any $x,y\in \{0,1\}^\N$, pick the projection to a factor that is different between the two points. This function satisfies requirements for (a), thus $\{0,1\}$ is totally disconnected.
 \part{}%c
-
+A neighborhood $U$ is the set of points that are equal up until some factor $n$, and differ in at least one factor after the first $n$ factors. Then $y$ can be the point that is equal to x for the first $n$ factors and differ in one or more factors after $n$. Thus $x$ is an accumulation point.
 
 \problem{}%3
 Let $S^2\subset \mathbb{R}^3$ be the unit sphere centered at the origin, and  let $N = (0,0,1)$ be the north pole.  \emph{Stereographic  projection from the north pole} is the map   $f:S^2\setminus\{N\}\to\mathbb{R}^2$ defined by letting  $f(p)$ be the point of intersection with $\mathbb{R}^2 = \{(x,y,z)\in\mathbb{R}^3:z=0\}$ of the straight line through $N$ and $p$.  
@@ -61,19 +62,19 @@ Let $S^2\subset \mathbb{R}^3$ be the unit sphere centered at the origin, and  le
 \solution{}
 
 \part{}%a
+Based on radially invariant similar triangles,
 \begin{equation}
-f(x,y,z) = \left(\frac{\sqrt{x^2+y^2}}{1-z}\cos(\theta) , \frac{\sqrt{x^2+y^2}}{1-z}\sin(\theta)\right)
+f_N(x,y,z) = \left(\frac{\sqrt{x^2+y^2}}{1-z}\frac{y}{x^2+y^2} , \frac{\sqrt{x^2+y^2}}{1-z}\frac{x}{x^2+y^2}\right)
 \end{equation}
-where $\theta = \mathrm{atan2}(x,y)$, where $\mathrm{atan2}$ is the four-quadrant inverse tangent function.
+
 \part{}%b
-\begin{gather}
-\theta = \mathrm{atan2}(x,y)\\
-r = \sqrt{x^2+y^2}\\
-z = \frac{2r^2\pm \sqrt{4(1-r^2)(r^2-1)}}{2(1-r^2)}\\
-d = \sqrt{1-z^2}\\
-g(x,y) = \left(d\cos(\theta),d\sin(\theta),z\right)
-\end{gather}
+\begin{equation}
+g_N(x,y) = \left(\sqrt{1-\left(\frac{x^2+y^2-1}{x^2+y^2+1}\right)^2}\frac{y}{x^2+y^2},\sqrt{1-\left(\frac{x^2+y^2-1}{x^2+y^2+1}\right)^2}\frac{x}{x^2+y^2},\frac{x^2+y^2-1}{x^2+y^2+1}\right)
+\end{equation}
 \part{}%c
-
-
+\begin{gather}
+f_S(x,y,z) = \left(\frac{\sqrt{x^2+y^2}}{1+z}\frac{y}{x^2+y^2} , \frac{\sqrt{x^2+y^2}}{1+z}\frac{x}{x^2+y^2}\right)\\
+g_S(x,y) = \left(\sqrt{1-\left(\frac{x^2+y^2-1}{x^2+y^2+1}\right)^2}\frac{y}{x^2+y^2},\sqrt{1-\left(\frac{x^2+y^2-1}{x^2+y^2+1}\right)^2}\frac{x}{x^2+y^2},-\frac{x^2+y^2-1}{x^2+y^2+1}\right)
+\end{gather}
+The compositions of these functions $f_N\circ g_S$ and $f_S\circ g_N$ are the transition functions. These functions are infinitely differentiable so the surface is smooth.
 \end{document}
